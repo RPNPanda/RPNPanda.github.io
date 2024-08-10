@@ -63,11 +63,25 @@ $(document).ready(function() {
 });
 </script>
 
-<a href="https://rpnmods.org/" target="_blank">
+<a href="https://rpnmods.org/" target="_blank" class="center-container">
   <button class="button-64" role="button"><span class="text">RPN Mods Website</span></button>
 </a>
 
 <style>
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  text-decoration: none;
+}
+
+.center-container:hover {
+  text-decoration: underline;
+  color: white;
+}
+
 .button-64 {
   align-items: center;
   background-image: linear-gradient(144deg, #8B0000, #FF4500 50%, #FF0000);
@@ -117,3 +131,4 @@ $(document).ready(function() {
   }
 }
 </style>
+
