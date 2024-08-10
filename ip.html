@@ -63,16 +63,29 @@ $(document).ready(function() {
 });
 </script>
 
-<a href="https://rpnmods.org/" target="_blank" class="center-container">
-  <button class="button-85" role="button">RPN Mods website</button>
-</a>
+<div class="button-container">
+  <a href="https://rpnmods.org/" target="_blank" class="center-container">
+    <button class="button-85" role="button">RPN Mods website</button>
+  </a>
+
+  <a href="https://discord.com/invite/rpnmods" target="_blank" class="center-container">
+    <button class="button-85" role="button">RPN Mods Discord Server</button>
+  </a>
+</div>
 
 <style>
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 20px; /* Space between buttons */
+  align-items: center; /* Center buttons horizontally */
+  margin-top: 20px; /* Space from the IP section */
+}
+
 .center-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust height as needed */
 }
 
 .button-85 {
@@ -141,4 +154,5 @@ $(document).ready(function() {
   top: 0;
   border-radius: 10px;
 }
+
 </style>
