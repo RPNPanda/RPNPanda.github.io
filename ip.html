@@ -19,29 +19,32 @@
             justify-content: center;
             background-color: #1a1a1a;
             padding: 10px;
-        }
-
-        hr {
-             margin-top: 100px;
-             border: none;
+            position: fixed; /* Fixes tabs at the top */
+            top: 0; /* Position tabs at the top */
+            width: 100%; /* Make sure tabs span the full width */
+            z-index: 1000; /* Ensure tabs stay on top */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+            border-bottom: 1px solid #333; /* Add bottom border for separation */
         }
 
         .tab-button {
             background-color: #333;
             border: none;
             color: #FFFFFF;
-            padding: 8px 12px; /* Smaller padding */
-            margin: 0 2px;
+            padding: 6px 10px; /* Smaller padding */
+            margin: 0 2px; /* Smaller margin */
             cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px; /* Smaller font size */
+            border-radius: 4px; /* Slightly smaller border-radius */
+            font-size: 13px; /* Smaller font size */
             text-align: center; /* Center text */
             display: inline-block; /* Ensure button size adjusts to content */
             text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
         }
 
         .tab-button:hover {
             background-color: #555;
+            transform: scale(1.05); /* Slightly enlarge the button on hover */
         }
 
         .tab-content {
@@ -49,6 +52,7 @@
             background-color: #1a1a1a;
             color: #FFFFFF;
             display: none;
+            margin-top: 60px; /* Ensure content starts below the tabs */
         }
 
         iframe {
@@ -70,7 +74,9 @@
         <a href="https://rpnmods.org/weaponID" class="tab-button">Cold War Weapon List</a>
         <a href="https://rpnmods.org/how-to-use" class="tab-button">How To Use Zombie Trainer</a>
     </div>
-<hr>
+    <div class="tab-content active">
+        <!-- Content goes here -->
+    </div>
 </body>
 
     <meta charset="UTF-8">
