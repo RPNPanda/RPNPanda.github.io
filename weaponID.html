@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join RPN Mods for top-quality game cheats, exceptional support, and competitive pricing, enhancing your gaming experience with reliable and effective solutions.">
+    <meta property="og:title" content="RPN Mods">
+    <meta property="og:description" content="Cold war Zombie Trainer Weapon ID's">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,49 +23,149 @@
             justify-content: center;
             background-color: #1a1a1a;
             padding: 10px;
-            position: fixed; /* Fixes tabs at the top */
-            top: 0; /* Position tabs at the top */
-            width: 100%; /* Make sure tabs span the full width */
-            z-index: 1000; /* Ensure tabs stay on top */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-            border-bottom: 1px solid #333; /* Add bottom border for separation */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid #333;
         }
 
         .tab-button {
             background-color: #333;
-            border: none;
             color: #FFFFFF;
-            padding: 6px 10px; /* Smaller padding */
-            margin: 0 2px; /* Smaller margin */
+            padding: 6px 10px;
+            margin: 0 2px;
             cursor: pointer;
-            border-radius: 4px; /* Slightly smaller border-radius */
-            font-size: 13px; /* Smaller font size */
-            text-align: center; /* Center text */
-            display: inline-block; /* Ensure button size adjusts to content */
-            text-decoration: none; /* Remove underline */
-            transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+            border-radius: 4px;
+            font-size: 13px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .tab-button:hover {
             background-color: #555;
-            transform: scale(1.05); /* Slightly enlarge the button on hover */
+            transform: scale(1.05);
         }
 
         .tab-content {
             padding: 20px;
             background-color: #1a1a1a;
             color: #FFFFFF;
-            display: none;
-            margin-top: 60px; /* Ensure content starts below the tabs */
+            display: none; /* Initially hide */
+            margin-top: 0; /* Remove margin to prevent overlap */
         }
 
-        iframe {
-            width: 100%;
-            height: 500px;
+
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .button-85 {
+            padding: 0.6em 2em;
             border: none;
+            outline: none;
+            color: rgb(255, 255, 255);
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            user-select: none;
         }
 
-        .active {
+        .button-85:before {
+            content: "";
+            background: linear-gradient(
+                45deg,
+                #ff0000,
+                #ff7300,
+                #fffb00,
+                #48ff00,
+                #00ffd5,
+                #002bff,
+                #7a00ff,
+                #ff00c8,
+                #ff0000
+            );
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing-button-85 20s linear infinite;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing-button-85 {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+
+        .button-85:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #222;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFFFFF;
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1c1c1c;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        li {
+            padding: 15px 25px;
+            border-bottom: 1px solid #333333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li:nth-child(odd) {
+            background-color: #2c2c2c;
+        }
+
+        li span {
+            font-weight: bold;
+            color: #f20000;
+        }
+
+        hr {
+            margin-top: 100px;
+            border: none;
         }
     </style>
 </head>
@@ -74,168 +180,19 @@
     <div class="tab-content active">
         <!-- Content goes here -->
     </div>
-</body>
+    
+    <h1>Weapon List</h1>
+    <p style="color: #262626; text-align: center;">List credits _exam</p>
+
+    <div class="button-container">
+        <a href="https://rpnmods.org/" target="_blank" class="center-container">
+            <button class="button-85" role="button">RPN Mods website</button>
+        </a>
+        <a href="https://discord.com/invite/rpnmods" target="_blank" class="center-container">
+            <button class="button-85" role="button">RPN Mods Discord Server</button>
+        </a>
 <hr>
-    <meta name="description" content="Join RPN Mods for top-quality game cheats, exceptional support, and competitive pricing, enhancing your gaming experience with reliable and effective solutions.">
-    <!-- Favicon -->
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
-    <!-- OpenGraph Meta Tags -->
-    <meta property="og:title" content="RPN Mods">
-    <meta property="og:description" content="Cold war Zombie Trainer Weapon ID's">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
-    
-    <!-- Additional Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</html>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #0c0c0c;
-        color: #FFFFFF;
-        margin: 20px;
-    }
-    h1 {
-        text-align: center;
-        color: #FFFFFF;
-        margin-bottom: 30px;
-    }
-    ul {
-        list-style-type: none;
-        padding: 0;
-        max-width: 600px;
-        margin: 0 auto;
-        background-color: #1c1c1c;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    li {
-        padding: 15px 25px;
-        border-bottom: 1px solid #333333;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    li:last-child {
-        border-bottom: none;
-    }
-    li:nth-child(odd) {
-        background-color: #2c2c2c;
-    }
-    li span {
-        font-weight: bold;
-        color: #f20000;
-    }
-hr {
-  margin-top: 100px;
-  border: none;
-}
-</style>
-
-
-<h1>Weapon List</h1>
-
-<p style="color: #262626; text-align: center;">List credits _exam</p>
-
-<div class="button-container">
-  <a href="https://rpnmods.org/" target="_blank" class="center-container">
-    <button class="button-85" role="button">RPN Mods website</button>
-  </a>
-
-  <a href="https://discord.com/invite/rpnmods" target="_blank" class="center-container">
-    <button class="button-85" role="button">RPN Mods Discord Server</button>
-  </a>
-</div>
-
-<style>
-.button-container {
-  display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  gap: 20px; /* Space between buttons */
-  align-items: center; /* Center buttons horizontally */
-  margin-top: 20px; /* Space from the IP section */
-}
-
-.center-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button-85 {
-  padding: 0.6em 2em;
-  border: none;
-  outline: none;
-  color: rgb(255, 255, 255);
-  background: #111;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-85:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing-button-85 20s linear infinite;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-@keyframes glowing-button-85 {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-.button-85:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #222;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-</style>
-<p>
-    
-</p>
-
+    </div>
 <ul>
     <li><span>1</span> = Default Weapon</li>
     <li><span>2</span> = CRBR-S BLAZER</li>
@@ -476,3 +433,7 @@ hr {
 <li><span>519</span> = DIE-A-LOTTI</li>
 <li><span>521</span> = SMOOTHBORE (MODDED EXPLOSION)</li>
 <li><span>525</span> = (MODDED EXPLOSION)(IDK)</li>
+ </ul>
+    <hr>
+</body>
+</html>
