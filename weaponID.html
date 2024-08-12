@@ -2,59 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPN Mods Tabs</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0c0c0c;
-            color: #FFFFFF;
-            margin: 0;
-            padding: 0;
-        }
+    font-family: Arial, sans-serif;
+    background-color: #0c0c0c;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
 
-        .tabs {
-            display: flex;
-            justify-content: center;
-            background-color: #1a1a1a;
-            padding: 10px;
-            position: fixed; /* Fixes tabs at the top */
-            top: 0; /* Position tabs at the top */
-            width: 100%; /* Make sure tabs span the full width */
-            z-index: 1000; /* Ensure tabs stay on top */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-            border-bottom: 1px solid #333; /* Add bottom border for separation */
-        }
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensure items are centered vertically */
+    background-color: #1a1a1a;
+    padding: 10px;
+    position: fixed; /* Fixes tabs at the top */
+    top: 0; /* Position tabs at the top */
+    width: 100%; /* Make sure tabs span the full width */
+    z-index: 1000; /* Ensure tabs stay on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    border-bottom: 1px solid #333; /* Add bottom border for separation */
+    margin: 0 auto; /* Ensure container is centered */
+}
 
-        .tab-button {
-            background-color: #333;
-            border: none;
-            color: #FFFFFF;
-            padding: 6px 10px; /* Smaller padding */
-            margin: 0 2px; /* Smaller margin */
-            cursor: pointer;
-            border-radius: 4px; /* Slightly smaller border-radius */
-            font-size: 13px; /* Smaller font size */
-            text-align: center; /* Center text */
-            display: inline-block; /* Ensure button size adjusts to content */
-            text-decoration: none; /* Remove underline */
-            transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
-        }
+.tab-button {
+    background-color: #333;
+    border: none;
+    color: #FFFFFF;
+    padding: 6px 10px; /* Smaller padding */
+    margin: 0 2px; /* Smaller margin */
+    cursor: pointer;
+    border-radius: 4px; /* Slightly smaller border-radius */
+    font-size: 13px; /* Smaller font size */
+    text-align: center; /* Center text */
+    display: inline-block; /* Ensure button size adjusts to content */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+}
 
-        .tab-button:hover {
-            background-color: #555;
-            transform: scale(1.05); /* Slightly enlarge the button on hover */
-        }
+.tab-button:hover {
+    background-color: #555;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
 
-        .tab-content {
-            padding: 20px;
-            background-color: #1a1a1a;
-            color: #FFFFFF;
-            display: none;
-            margin-top: 60px; /* Ensure content starts below the tabs */
-        }
+.tab-content {
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+    display: none;
+    margin-top: 60px; /* Ensure content starts below the tabs */
+}
 
         iframe {
             width: 100%;
