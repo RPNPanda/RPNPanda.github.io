@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPN Mods | IP</title>
     <meta name="description" content="Join RPN Mods for top-quality game cheats, exceptional support, and competitive pricing, enhancing your gaming experience with reliable and effective solutions.">
@@ -9,9 +11,7 @@
     <meta property="og:description" content="This tool helps you find your IP address for recovering lost keys in the RPN Mods Discord server.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,6 +19,11 @@
             color: #FFFFFF;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         .tabs {
@@ -26,82 +31,32 @@
             justify-content: center;
             background-color: #1a1a1a;
             padding: 10px;
-            position: fixed; /* Fixes tabs at the top */
-            top: 0; /* Position tabs at the top */
-            width: 100%; /* Make sure tabs span the full width */
-            z-index: 1000; /* Ensure tabs stay on top */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-            border-bottom: 1px solid #333; /* Add bottom border for separation */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid #333;
         }
 
         .tab-button {
             background-color: #333;
             border: none;
             color: #FFFFFF;
-            padding: 6px 10px; /* Smaller padding */
-            margin: 0 2px; /* Smaller margin */
+            padding: 6px 10px;
+            margin: 0 2px;
             cursor: pointer;
-            border-radius: 4px; /* Slightly smaller border-radius */
-            font-size: 13px; /* Smaller font size */
-            text-align: center; /* Center text */
-            display: inline-block; /* Ensure button size adjusts to content */
-            text-decoration: none; /* Remove underline */
-            transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+            border-radius: 4px;
+            font-size: 13px;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .tab-button:hover {
             background-color: #555;
-            transform: scale(1.05); /* Slightly enlarge the button on hover */
-        }
-
-        .tab-content {
-            padding: 20px;
-            background-color: #1a1a1a;
-            color: #FFFFFF;
-            display: none;
-            margin-top: 60px; /* Ensure content starts below the tabs */
-        }
-
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-        }
-
-        .active {
-        }
-    </style>
-</head>
-<body>
-    <div class="tabs">
-        <a href="https://rpnmods.org/" class="tab-button">Main Site</a>
-        <a href="https://rpnmods.org/loader" class="tab-button">Download Loader</a>
-        <a href="https://rpnmods.org/ip" class="tab-button">Show IP For Lost Key's</a>
-        <a href="https://rpnmods.org/weaponID" class="tab-button">Cold War Weapon List</a>
-        <a href="https://rpnmods.org/how-to-use" class="tab-button">How To Use Zombie Trainer</a>
-    </div>
-    <div class="tab-content active">
-        <!-- Content goes here -->
-    </div>
-</body>
-    <style>
-        @font-face {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 300;
-            src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
-        }
-
-        body {
-            background-color: #0c0c0c; /* Dark gray background */
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            transform: scale(1.05);
         }
 
         .container {
@@ -112,6 +67,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             text-align: center;
+            margin-top: 60px;
         }
 
         .ip {
@@ -121,7 +77,6 @@
         }
 
         #ip-address {
-            font-size: 25px;
             font-size: 4vw;
             color: #FFFFFF;
             margin-top: 10px;
@@ -146,8 +101,6 @@
             z-index: 0;
             border-radius: 10px;
             user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
             font-size: 16px;
             font-weight: bold;
             transition: background 0.3s ease;
@@ -183,9 +136,11 @@
             0% {
                 background-position: 0 0;
             }
+
             50% {
                 background-position: 400% 0;
             }
+
             100% {
                 background-position: 0 0;
             }
@@ -204,7 +159,16 @@
         }
     </style>
 </head>
+
 <body>
+    <div class="tabs">
+        <a href="https://rpnmods.org/" class="tab-button">Main Site</a>
+        <a href="https://rpnmods.org/loader" class="tab-button">Download Loader</a>
+        <a href="https://rpnmods.org/ip" class="tab-button">Show IP For Lost Key's</a>
+        <a href="https://rpnmods.org/weaponID" class="tab-button">Cold War Weapon List</a>
+        <a href="https://rpnmods.org/how-to-use" class="tab-button">How To Use Zombie Trainer</a>
+    </div>
+
     <div class="container">
         <div class="ip">
             <h1>Your IP:</h1>
@@ -212,11 +176,11 @@
         </div>
 
         <div class="button-container">
-            <a href="https://rpnmods.org/" target="_blank" class="center-container">
-                <button class="button-85" role="button">RPN Mods website</button>
+            <a href="https://rpnmods.org/" target="_blank">
+                <button class="button-85" role="button">RPN Mods Website</button>
             </a>
 
-            <a href="https://discord.com/invite/rpnmods" target="_blank" class="center-container">
+            <a href="https://discord.com/invite/rpnmods" target="_blank">
                 <button class="button-85" role="button">RPN Mods Discord Server</button>
             </a>
         </div>
@@ -224,11 +188,12 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $.getJSON('https://jsonip.com?callback=?', function (data) {
                 $('#ip-address').text(data.ip);
             });
         });
     </script>
 </body>
+
 </html>
