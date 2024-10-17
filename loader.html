@@ -10,10 +10,12 @@
     <meta property="og:description" content="Download RPN Mods Loaders">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0c0c0c;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);
+            background-image: url('https://images4.alphacoders.com/135/1351804.png'); /* Add subtle texture */
             color: #FFFFFF;
             margin: 0;
             padding: 0;
@@ -27,7 +29,7 @@
         .tabs {
             display: flex;
             justify-content: center;
-            background-color: #1a1a1a;
+            background-color: rgba(26, 26, 26, 0.8);
             padding: 10px;
             position: fixed;
             top: 0;
@@ -41,19 +43,18 @@
             background-color: #333;
             border: none;
             color: #FFFFFF;
-            padding: 6px 10px;
-            margin: 0 2px;
+            padding: 8px 12px;
+            margin: 0 4px;
             cursor: pointer;
             border-radius: 4px;
-            font-size: 13px;
+            font-size: 14px;
             text-align: center;
-            display: inline-block;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.2s;
         }
 
         .tab-button:hover {
-            background-color: #555;
+            background-color: #d50000; /* Red hover */
             transform: scale(1.05);
         }
 
@@ -61,7 +62,7 @@
             max-width: 800px;
             width: 100%;
             padding: 20px;
-            background-color: #1c1c1c;
+            background-color: rgba(28, 28, 28, 0.9);
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             text-align: center;
@@ -69,13 +70,16 @@
         }
 
         .ip {
-            font-size: 18px;
+            font-size: 22px;
+            font-weight: bold;
             margin-bottom: 20px;
+            color: #ff0000; /* Red text */
         }
 
         hr {
             margin-top: 100px;
             border: none;
+            border-top: 1px solid #444;
         }
 
         .button-container {
@@ -91,7 +95,7 @@
             border: none;
             outline: none;
             color: #FFFFFF;
-            background: #111;
+            background: #ff0000; /* Red button */
             cursor: pointer;
             position: relative;
             z-index: 0;
@@ -102,41 +106,30 @@
             transition: background 0.3s ease;
         }
 
+        .button-85:hover {
+            background: #d50000; /* Darker red on hover */
+        }
+
         .button-85:before {
             content: "";
-            background: linear-gradient(
-                45deg,
-                #ff0000,
-                #ff7300,
-                #fffb00,
-                #48ff00,
-                #00ffd5,
-                #002bff,
-                #7a00ff,
-                #ff00c8,
-                #ff0000
-            );
+            background: rgba(255, 0, 0, 0.5); /* Red glow */
             position: absolute;
-            top: -2px;
-            left: -2px;
-            background-size: 400%;
+            top: -4px;
+            left: -4px;
             z-index: -1;
-            filter: blur(5px);
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            animation: glowing-button-85 20s linear infinite;
+            width: calc(100% + 8px);
+            height: calc(100% + 8px);
+            filter: blur(8px);
             border-radius: 10px;
+            animation: glowing-button-85 1.5s infinite alternate;
         }
 
         @keyframes glowing-button-85 {
             0% {
-                background-position: 0 0;
-            }
-            50% {
-                background-position: 400% 0;
+                opacity: 0.5;
             }
             100% {
-                background-position: 0 0;
+                opacity: 1;
             }
         }
 
@@ -163,43 +156,40 @@
     </div>
 
     <div class="container">
-    <div class="ip">
-        <p>Cold War</p>
+        <div class="ip">
+            <p>Cold War</p>
+        </div>
+        <div class="button-container">
+            <a href="https://rpnmods.org/cw/loader" class="center-container">
+                <button class="button-85" role="button">Cold War Loader</button>
+            </a>
+        </div>
     </div>
 
-    <div class="button-container">
-        <a href="https://rpnmods.org/cw/loader" class="center-container">
-            <button class="button-85" role="button">Cold War Loader</button>
-        </a>
-    </div>
-</div>
+    <hr>
 
-<hr>
-
-<div class="container">
-    <div class="ip">
-        <p>MW3</p>
-    </div>
-
-    <div class="button-container">
-        <a href="https://rpnmods.org/mw3/loader" class="center-container">
-            <button class="button-85" role="button">MW3 Loader</button>
-        </a>
-    </div>
-</div>
-
-<hr>
-
-<div class="container">
-    <div class="ip">
-        <p>Black Ops 6</p>
+    <div class="container">
+        <div class="ip">
+            <p>MW3</p>
+        </div>
+        <div class="button-container">
+            <a href="https://rpnmods.org/mw3/loader" class="center-container">
+                <button class="button-85" role="button">MW3 Loader</button>
+            </a>
+        </div>
     </div>
 
-    <div class="button-container">
-        <a href="https://rpnmods.org/bo6/loader" class="center-container">
-            <button class="button-85" role="button">Black Ops 6 Loader</button>
-        </a>
+    <hr>
+
+    <div class="container">
+        <div class="ip">
+            <p>Black Ops 6</p>
+        </div>
+        <div class="button-container">
+            <a href="https://rpnmods.org/bo6/loader" class="center-container">
+                <button class="button-85" role="button">Black Ops 6 Loader</button>
+            </a>
+        </div>
     </div>
-</div>
 </body>
 </html>
