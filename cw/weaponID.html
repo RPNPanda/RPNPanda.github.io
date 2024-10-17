@@ -10,19 +10,26 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
     <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0c0c0c;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);
+            background-image: url('https://images4.alphacoders.com/135/1351804.png');
             color: #FFFFFF;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         .tabs {
             display: flex;
             justify-content: center;
-            background-color: #1a1a1a;
+            background-color: rgba(26, 26, 26, 0.8);
             padding: 10px;
             position: fixed;
             top: 0;
@@ -34,31 +41,52 @@
 
         .tab-button {
             background-color: #333;
+            border: none;
             color: #FFFFFF;
-            padding: 6px 10px;
-            margin: 0 2px;
+            padding: 8px 12px;
+            margin: 0 4px;
             cursor: pointer;
             border-radius: 4px;
-            font-size: 13px;
+            font-size: 14px;
             text-align: center;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.2s;
         }
 
         .tab-button:hover {
-            background-color: #555;
+            background-color: #d50000;
             transform: scale(1.05);
         }
 
-        .tab-content {
+        .container {
+            max-width: 800px;
+            width: 90%;
             padding: 20px;
-            background-color: #1a1a1a;
-            color: #FFFFFF;
-            display: none; /* Initially hide */
-            margin-top: 0; /* Remove margin to prevent overlap */
+            background-color: rgba(28, 28, 28, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-top: 60px;
         }
 
+        h1 {
+            font-size: 24px;
+            color: #f20000;
+            margin-bottom: 20px;
+        }
 
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+        }
+
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid #444;
+        }
 
         .button-container {
             display: flex;
@@ -72,45 +100,43 @@
             padding: 0.6em 2em;
             border: none;
             outline: none;
-            color: rgb(255, 255, 255);
-            background: #111;
+            color: #FFFFFF;
+            background: #ff0000; /* Red button */
             cursor: pointer;
             position: relative;
             z-index: 0;
             border-radius: 10px;
             user-select: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .button-85:hover {
+            background: #d50000; /* Darker red on hover */
         }
 
         .button-85:before {
             content: "";
-            background: linear-gradient(
-                45deg,
-                #ff0000,
-                #ff7300,
-                #fffb00,
-                #48ff00,
-                #00ffd5,
-                #002bff,
-                #7a00ff,
-                #ff00c8,
-                #ff0000
-            );
+            background: rgba(255, 0, 0, 0.5); /* Red glow */
             position: absolute;
-            top: -2px;
-            left: -2px;
-            background-size: 400%;
+            top: -4px;
+            left: -4px;
             z-index: -1;
-            filter: blur(5px);
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            animation: glowing-button-85 20s linear infinite;
+            width: calc(100% + 8px);
+            height: calc(100% + 8px);
+            filter: blur(8px);
             border-radius: 10px;
+            animation: glowing-button-85 1.5s infinite alternate;
         }
 
         @keyframes glowing-button-85 {
-            0% { background-position: 0 0; }
-            50% { background-position: 400% 0; }
-            100% { background-position: 0 0; }
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         .button-85:after {
@@ -125,48 +151,33 @@
             border-radius: 10px;
         }
 
-        h1 {
-            text-align: center;
-            color: #FFFFFF;
-            margin-top: 100px;
-            margin-bottom: 30px;
-        }
-
-        ul {
-            list-style-type: none;
+        .weapon-list {
+            list-style: none;
             padding: 0;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #1c1c1c;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            overflow: hidden;
+            margin: 0;
+            text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        li {
-            padding: 15px 25px;
-            border-bottom: 1px solid #333333;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .weapon-list li {
+            padding: 8px;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
         }
 
-        li:last-child {
-            border-bottom: none;
+        .weapon-list li:hover {
+            background: rgba(255, 0, 0, 0.2);
         }
 
-        li:nth-child(odd) {
-            background-color: #2c2c2c;
-        }
-
-        li span {
-            font-weight: bold;
+        .weapon-list li span {
             color: #f20000;
-        }
-
-        hr {
-            margin-top: 100px;
-            border: none;
+            font-weight: bold;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -178,10 +189,7 @@
         <a href="https://rpnmods.org/weaponID" class="tab-button">Cold War Weapon List</a>
         <a href="https://rpnmods.org/how-to-use" class="tab-button">How To Use</a>
     </div>
-    <div class="tab-content active">
-        <!-- Content goes here -->
-    </div>
-    
+ <div class="container">
     <h1>Weapon List</h1>
     <p style="color: #262626; text-align: center;">List credits _exam</p>
 
@@ -195,6 +203,7 @@
 <hr>
     </div>
 <ul>
+     <ul class="weapon-list">
     <li><span>1</span> = Default Weapon</li>
     <li><span>2</span> = CRBR-S BLAZER</li>
     <li><span>3</span> = CRBR-S</li>
