@@ -145,3 +145,29 @@ hr {
     top: 0;
     border-radius: 10px;
 }
+
+.weapon-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+        .weapon-list li {
+            padding: 8px;
+            border-bottom: 1px solid #444;
+            transition: background 0.3s;
+}
+        .weapon-list li:hover {
+            background: rgba(255, 0, 0, 0.2);
+}
+        .weapon-list li span {
+            color: #f20000;
+            font-weight: bold;
+            margin-right: 10px;
+}
