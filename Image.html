@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPN Mods | Image</title>
+    <meta name="description" content="Join RPN Mods for top-quality game cheats, exceptional support, and competitive pricing, enhancing your gaming experience with reliable and effective solutions.">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
+    <meta property="og:title" content="RPN Mods">
+    <meta property="og:description" content="Download RPN Mods Loaders">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
+   
+</head>
+<body>
+    <h1>Temp Image Store</h1>
+    <input type="file" id="imageUpload" accept="image/*">
+    <br>
+    <input type="text" id="imageUrl" readonly>
+    <button onclick="copyUrl()">Copy URL</button>
+    <br>
+    <img id="displayImage" style="display:none;">
+
+    <script>
+        function showImage(event) {
+            let file = event.target.files[0];
+            if (file) {
+                let url = URL.createObjectURL(file);
+                document.getElementById('imageUrl').value = url;
+                let img = document.getElementById('displayImage');
+                img.src = url;
+                img.style.display = 'block';
+            }
+        }
+
+        function copyUrl() {
+            let urlField = document.getElementById('imageUrl');
+            urlField.select();
+            document.execCommand("copy");
+            alert("URL Copied to Clipboard!");
+        }
+
+        document.getElementById('imageUpload').addEventListener('change', showImage);
+    </script>
+</body>
+</html>
