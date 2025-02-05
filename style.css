@@ -55,8 +55,9 @@ body {
     border-radius: 14px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
     text-align: center;
-    margin-top: 70px;
+    margin: 70px auto; /* Center container horizontally */
     backdrop-filter: blur(10px);
+    position: relative; /* Ensure contained elements are positioned correctly */
 }
 
 .scrollable-content {
