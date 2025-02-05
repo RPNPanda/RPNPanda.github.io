@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,51 @@
     <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
-<script>
+    <style>
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #searchBar {
+            display: block;
+            margin: 20px auto;
+            /* Center horizontally and add vertical spacing */
+            width: 80%;
+            /* Adjust the width to make it responsive */
+            max-width: 500px;
+            /* Limit the maximum width */
+            padding: 0.7em 1em;
+            /* Adjust padding for better visual balance */
+            border: none;
+            outline: none;
+            color: #FFFFFF;
+            background: rgba(20, 20, 20, 1);
+            cursor: pointer;
+            z-index: 0;
+            border-radius: 12px;
+            user-select: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out, transform 0.2s ease;
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            /* Red border */
+            text-align: center;
+        }
+
+
+
+        #searchBar::placeholder {
+            color: #8a8a8a;
+        }
+
+        .weapon-list li {
+            padding: 5px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+    </style>
+    <script>
         // Function to detect mobile devices
         function isMobileDevice() {
             return /Mobi|Android/i.test(navigator.userAgent);
@@ -25,7 +70,24 @@
             }
         };
     </script>
+    <script>
+        function searchWeapons() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let list = document.getElementById('weaponList');
+            let items = list.getElementsByTagName('li');
+
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].textContent.toLowerCase();
+                if (text.includes(input)) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
+
 <body>
     <div class="tabs">
         <a href="https://rpnmods.org/" class="tab-button">Main Site</a>
@@ -34,259 +96,264 @@
         <a href="https://rpnmods.org/cw/weaponID" class="tab-button">Cold War Weapon List</a>
         <a href="https://rpnmods.org/how-to-use" class="tab-button">How To Use</a>
     </div>
- <div class="container">
-    <h1>Weapon List</h1>
-    <p style="color: #262626; text-align: center;">List credits _exam</p>
+    <div class="container">
+        <h1>Weapon List</h1>
+        <p style="color: #696969; text-align: center;">List credits _exam</p>
 
-    <div class="button-container">
-        <a href="https://rpnmods.org/" target="_blank" class="center-container">
-            <button class="button-85" role="button">RPN Mods website</button>
-        </a>
-        <a href="https://discord.com/invite/rpnmods" target="_blank" class="center-container">
-            <button class="button-85" role="button">RPN Mods Discord Server</button>
-        </a>
-    </div>
-<ul>
- <ul class="weapon-list">
-    <li><span>1</span> = Default Weapon</li>
-    <li><span>2</span> = CRBR-S BLAZER</li>
-    <li><span>3</span> = CRBR-S</li>
-    <li><span>4</span> = CARV.2</li>
-    <li><span>5</span> = GRAV</li>
-    <li><span>6</span> = STONER 63</li>
-    <li><span>7</span> = E-TOOL</li>
-    <li><span>8</span> = M82</li>
-    <li><span>9</span> = AK-47</li>
-    <li><span>10</span> = .410 IRONHIDE</li>
-    <li><span>11</span> = CRBR-S DIFFUSSER</li>
-    <li><span>13</span> = CHRSYSALAX SAVAGER</li>
-    <li><span>14</span> = R1 SHADOWHUNTER</li>
-    <li><span>15</span> = DECOYS (TACTICAL)</li>
-    <li><span>16</span> = AMP63</li>
-    <li><span>17</span> = M79</li>
-    <li><span>18</span> = MACHETE</li>
-    <li><span>19</span> = RPG-7</li>
-    <li><span>20</span> = KRIG-6</li>
-    <li><span>21</span> = VARGO 52</li>
-    <li><span>22</span> = OTS-9</li>
-    <li><span>23</span> = KNIFE</li>
-    <li><span>24</span> = TOMOHAWKS (LETHAL)</li>
-    <li><span>25</span> = BULLFROG</li>
-    <li><span>26</span> = BASEBALL BAT</li>
-    <li><span>27</span> = MARSHAL</li>
-    <li><span>28</span> = 1911</li>
-    <li><span>29</span> = MACE</li>
-    <li><span>31</span> = KSP 45</li>
-    <li><span>32</span> = GRENADE (LETHAL)</li>
-    <li><span>33</span> = MAGNUM</li>
-    <li><span>34</span> = STIMSHOT (TACTICAL)</li>
-    <li><span>35</span> = GRAPPLE</li>
-    <li><span>36</span> = HAMMER AND SICKLE</li>
-    <li><span>38</span> = CIGMA 2</li>
-    <li><span>39</span> = SAI</li>
-    <li><span>41</span> = SEMTEX (LETHAL)</li>
-    <li><span>50</span> = PELINGTON 703</li>
-    <li><span>51</span> = FARA 83</li>
-    <li><span>52</span> = GRAPPLE</li>
-    <li><span>53</span> = DMR 14</li>
-    <li><span>54</span> = TYPE 63</li>
-    <li><span>55</span> = HAUER 77</li>
-    <li><span>56</span> = C58</li>
-    <li><span>57</span> = AUG</li>
-    <li><span>58</span> = M16</li>
-    <li><span>59</span> = RAI K-84</li>
-    <li><span>61</span> = MP5</li>
-    <li><span>62</span> = STUN GRENADE (LETHAL)</li>
-    <li><span>63</span> = NAIL GUN</li>
-    <li><span>64</span> = LC10</li>
-    <li><span>65</span> = AK74U</li>
-    <li><span>66</span> = MOLOTOV (LETHAL)</li>
-    <li><span>67</span> = MAC-10</li>
-    <li><span>68</span> = RPD</li>
-    <li><span>69</span> = SCYTHE</li>
-    <li><span>70</span> = EM2</li>
-    <li><span>71</span> = BATTLE AXE</li>
-    <li><span>72</span> = LW3-TUNDRA</li>
-    <li><span>73</span> = CANE</li>
-    <li><span>74</span> = PPSH-41</li>
-    <li><span>75</span> = LT53 KAZIMIR (TACTICAL)</li>
-    <li><span>76</span> = GROZA</li>
-    <li><span>77</span> = QBZ-83</li>
-    <li><span>78</span> = ZRG-20MM</li>
-    <li><span>79</span> = GALLO SA12</li>
-    <li><span>80</span> = MG 82</li>
-    <li><span>81</span> = XM4</li>
-    <li><span>82</span> = C4 (LETHAL)</li>
-    <li><span>83</span> = LAPA</li>
-    <li><span>84</span> = TEC-9</li>
-    <li><span>85</span> = RAY GUN</li>
-    <li><span>86</span> = HEALTH (TACTICAL) (IDK)</li>
-    <li><span>88</span> = MILANDO 821</li>
-    <li><span>89</span> = CYMBAL MONKEY (TACTICAL)</li>
-    <li><span>90</span> = STREETSWEEPER</li>
-    <li><span>91</span> = UGR</li>
-    <li><span>92</span> = CRBR-S SWARM</li>
-    <li><span>93</span> = M60</li>
-    <li><span>94</span> = GUNSHIP (MODDED)</li>
-    <li><span>96</span> = GUNSHIP (MODDED FISTS)</li>
-    <li><span>97</span> = GUNSHIP (MODDED FAST FIRE)</li>
-    <li><span>98</span> = SENTRY</li>
-    <li><span>100</span> = STRAFE RUN (MODDED)</li>
-    <li><span>101</span> = ATTACK HELICOPTER (MODDED)</li>
-    <li><span>102</span> = DRONE SQUAD (MODDED)</li>
-    <li><span>103</span> = SAM TURRET (MODDED)</li>
-    <li><span>104</span> = RC-XD (MODDED)</li>
-    <li><span>109</span> = CHOPPER GUNNER (WORKING)</li>
-    <li><span>111</span> = ATTACK HELICOPTER</li>
-    <li><span>143</span> = DECOY (TACTICAL)</li>
-    <li><span>145</span> = MAGNUM</li>
-    <li><span>157</span> = AMP63</li>
-    <li><span>169</span> = SMOKE BOMB (TACTICAL)</li>
-    <li><span>174</span> = FRAG GRENADE (LETHAL)</li>
-    <li><span>176</span> = SCREAM KNIFE</li>
-    <li><span>179</span> = PROXIMITY MINE</li>
-    <li><span>186</span> = GRAPPLE</li>
-    <li><span>191</span> = CRUISE MISSLE</li>
-    <li><span>192</span> = CRUISE MISSLE</li>
-    <li><span>198</span> = JAMMER</li>
-    <li><span>205</span> = 1911</li>
-    <li><span>207</span> = INFECTED KNIFE</li>
-    <li><span>224</span> = SNOW BALLS</li>
-    <li><span>225</span> = BARB WIRE</li>
-    <li><span>226</span> = SOME SORT OF GRENADE (LETHAL)</li>
-    <li><span>228</span> = MODDED FISTS (IDK)</li>
-    <li><span>232</span> = FLASH BANG (TACTICAL)</li>
-    <li><span>233</span> = ALIEN FISTS</li>
-    <li><span>238</span> = MODDED KNIFE</li>
-    <li><span>239</span> = TROPHY SYSTEM</li>
-    <li><span>240</span> = DIAMATTI</li>
-    <li><span>248</span> = EXPLOSIVE FISTS (EXPLOSIVE)</li>
-    <li><span>249</span> = MODDED FISTS (BULLETS)</li>
-    <li><span>252</span> = MARSHAL</li>
-    <li><span>265</span> = MODDED GRENADE NUKES</li>
-    <li><span>266</span> = SCREAM KNIFE</li>
-    <li><span>268</span> = MODDED GRENADE FIRE NUKE</li>
-    <li><span>269</span> = INVISIBLE GRENADE EXPLOSION</li>
-    <li><span>271</span> = MODDED FISTS (BULLETS)</li>
-    <li><span>272</span> = MODDED FISTS EXPLOSIVE (NO DAMAGE)</li>
-    <li><span>273</span> = TWIN .50 BROWNING (MODDED)</li>
-    <li><span>275</span> = MODDED FISTS (BULLETS)</li>
-    <li><span>279</span> = XM4</li>
-    <li><span>282</span> = XM4</li>
-    <li><span>284</span> = XM4</li>
-    <li><span>292</span> = XM4</li>
-    <li><span>313</span> = ROAD RAGE</li>
-    <li><span>320</span> = DOOM & GLOOM</li>
-    <li><span>321</span> = AUG-M3NT</li>
-    <li><span>322</span> = MODDED FISTS (SHOOTS GREEN SHIT)</li>
-    <li><span>324</span> = DISCORDIAN DISRUPTOR</li>
-    <li><span>327</span> = D.I.E NOVA-5</li>
-    <li><span>329</span> = GRAND SLAMMER</li>
-    <li><span>330</span> = GRAVITAS</li>
-    <li><span>332</span> = RING OF FIRE (FIELD UPGRADE)</li>
-    <li><span>337</span> = HEAD CANNON</li>
-    <li><span>338</span> = CNIDOBLASTER</li>
-    <li><span>339</span> = DRAGON EXECUTIONER</li>
-    <li><span>341</span> = TENEBRIS ANIMA (PAP CHRSALAX SAVAGER)</li>
-    <li><span>343</span> = PRIVATE EYE</li>
-    <li><span>344</span> = D.E.A.D. VIRULENCE</li>
-    <li><span>345</span> = PERMAFROST</li>
-    <li><span>346</span> = PAIN & SUFFERING</li>
-    <li><span>348</span> = BLITZKRIG 99</li>
-    <li><span>349</span> = CRBR-TRN QUINTESSENCE</li>
-    <li><span>350</span> = LANCE A LOT</li>
-    <li><span>353</span> = PAIN</li>
-    <li><span>354</span> = SERKITS KISS (MODDED)</li>
-    <li><span>355</span> = D.E.A.D. IMMOLATOR</li>
-    <li><span>357</span> = DEMOLISHER K14</li>
-    <li><span>358</span> = CRBR-TRN ENLIGHTENMENT</li>
-    <li><span>359</span> = TESLA STORM (FIELD UPGRADE)</li>
-    <li><span>362</span> = GRISLY REAPER</li>
-    <li><span>363</span> = D.E.A.D. GLACIALATOR</li>
-    <li><span>368</span> = XENO MATTER 4000</li>
-    <li><span>369</span> = CR17-D20</li>
-    <li><span>370</span> = CARV-O-MATIC</li>
-    <li><span>371</span> = AK-74U</li>
-    <li><span>372</span> = DIE-A-LOTTI & DIE-A-MORI</li>
-    <li><span>373</span> = INFINITE RING OF FIRE</li>
-    <li><span>375</span> = DEVILS BROADSIDE</li>
-    <li><span>376</span> = REDECORATOR</li>
-    <li><span>377</span> = ANATHEMA</li>
-    <li><span>378</span> = CRBR-TRN SEEKER</li>
-    <li><span>379</span> = SMALL CALIBER (MODDED)</li>
-    <li><span>380</span> = 1911</li>
-    <li><span>382</span> = RASPUTTINS RETRIBUTION</li>
-    <li><span>383</span> = YAOGUAI</li>
-    <li><span>384</span> = SCREAM KNIFE</li>
-    <li><span>385</span> = MODDED WEAPON (EXPLOSIVE BLUE SHIT)</li>
-    <li><span>387</span> = SAIKOU & SAINARA</li>
-   <li><span>388</span> = D.E.A.D. THUNDERBLAST</li>
-<li><span>389</span> = WRECK9</li>
-<li><span>390</span> = 1911</li>
-<li><span>391</span> = WINNOWER</li>
-<li><span>392</span> = CRBR-TRN DUALITY</li>
-<li><span>393</span> = AETHER SHROUD (FIELD UPGRADE)</li>
-<li><span>394</span> = E-MC2</li>
-<li><span>395</span> = FROST BLAST (FIELD UPGRADE)</li>
-<li><span>400</span> = BANANA LETHAL (IDK)</li>
-<li><span>402</span> = SHARP SHOOTER</li>
-<li><span>403</span> = WARDENS SHOTGUN</li>
-<li><span>405</span> = LA LLORONA</li>
-<li><span>406</span> = YAMIKIRIMARU</li>
-<li><span>407</span> = HIGH ANXIETY</li>
-<li><span>408</span> = HEALING AURA (FIELD UPGRADE)</li>
-<li><span>413</span> = BOIUNA</li>
-<li><span>414</span> = OMEGA 3FA</li>
-<li><span>415</span> = PELLEGRINO DELLA MORTE</li>
-<li><span>420</span> = TESLA STORM (FIELD UPGRADE)</li>
-<li><span>424</span> = SOUL HARVESTER</li>
-<li><span>426</span> = ENERGY MINE (FIELD UPGRADE)</li>
-<li><span>427</span> = BUFOTOXIN</li>
-<li><span>428</span> = FRENZIED GUARD (FIELD UPGRADE)</li>
-<li><span>433</span> = TUGARIN</li>
-<li><span>434</span> = PSYCHOTROPIC THUNDER</li>
-<li><span>435</span> = THE QUEENSWOMAN</li>
-<li><span>440</span> = NEARA 51</li>
-<li><span>449</span> = THE LAW</li>
-<li><span>451</span> = SWISS KH3353</li>
-<li><span>452</span> = D.E.A.D. JOLTSURGE</li>
-<li><span>453</span> = PRIVATE EYE & FEMME FATALE</li>
-<li><span>455</span> = AXE ME AGAIN</li>
-<li><span>456</span> = SUCCUBUS STINGER</li>
-<li><span>460</span> = LAW AND ORDER</li>
-<li><span>462</span> = ZJOLNIR</li>
-<li><span>466</span> = FIRE BOMB (LETHAL)</li>
-<li><span>471</span> = ORION 777</li>
-<li><span>472</span> = MYSTIC PONY EXPRESS</li>
-<li><span>474</span> = HELL VETICA</li>
-<li><span>476</span> = D.I.E. ELECTROBOLT</li>
-<li><span>478</span> = PORTERS X2 RAY GUN</li>
-<li><span>480</span> = EL SLASHER</li>
-<li><span>481</span> = MATTER DISMANTLER</li>
-<li><span>482</span> = SPECIMEN (MODDED)</li>
-<li><span>484</span> = PAIR OSTRIKAS</li>
-<li><span>485</span> = ACE OF SPADES</li>
-<li><span>487</span> = D.I.E. CRYO-EMITTER</li>
-<li><span>490</span> = HERALD OF WOE</li>
-<li><span>491</span> = DIE BREAKER</li>
-<li><span>493</span> = RUINOUS PAIN DISTRIBUTOR</li>
-<li><span>494</span> = D.I.E. NOVA-5</li>
-<li><span>495</span> = WARDENS SHOTGUN</li>
-<li><span>497</span> = SKULLSPLITTER</li>
-<li><span>498</span> = D.I.E. THERMOPHASIC</li>
-<li><span>499</span> = RAY GUN</li>
-<li><span>500</span> = AK-74NOFU</li>
-<li><span>501</span> = DOOM</li>
-<li><span>502</span> = ROYALE WITH LEAD</li>
-<li><span>504</span> = ROCKS (LETHAL)</li>
-<li><span>505</span> = BROKEN CLAYMORE</li>
-<li><span>511</span> = CRUNCH TIME</li>
-<li><span>512</span> = CLOSING ARGUMENT</li>
-<li><span>516</span> = CULEBRE</li>
-<li><span>518</span> = H-NGM-N</li>
-<li><span>519</span> = DIE-A-LOTTI</li>
-<li><span>521</span> = SMOOTHBORE (MODDED EXPLOSION)</li>
-<li><span>525</span> = (MODDED EXPLOSION)(IDK)</li>
- </ul>
+        <div class="button-container">
+            <a href="https://rpnmods.org/" target="_blank" class="center-container">
+                <button class="button-85" role="button">RPN Mods website</button>
+            </a>
+            <a href="https://discord.com/invite/rpnmods" target="_blank" class="center-container">
+                <button class="button-85" role="button">RPN Mods Discord Server</button>
+            </a>
+        </div>
+        <ul>
+            <div class="search-container">
+                <input type="text" id="searchBar" placeholder="Search weapons..." onkeyup="searchWeapons()">
+            </div>
+
+            <ul class="weapon-list" id="weaponList">
+                <li><span>1</span> = Default Weapon</li>
+                <li><span>2</span> = CRBR-S BLAZER</li>
+                <li><span>3</span> = CRBR-S</li>
+                <li><span>4</span> = CARV.2</li>
+                <li><span>5</span> = GRAV</li>
+                <li><span>6</span> = STONER 63</li>
+                <li><span>7</span> = E-TOOL</li>
+                <li><span>8</span> = M82</li>
+                <li><span>9</span> = AK-47</li>
+                <li><span>10</span> = .410 IRONHIDE</li>
+                <li><span>11</span> = CRBR-S DIFFUSSER</li>
+                <li><span>13</span> = CHRSYSALAX SAVAGER</li>
+                <li><span>14</span> = R1 SHADOWHUNTER</li>
+                <li><span>15</span> = DECOYS (TACTICAL)</li>
+                <li><span>16</span> = AMP63</li>
+                <li><span>17</span> = M79</li>
+                <li><span>18</span> = MACHETE</li>
+                <li><span>19</span> = RPG-7</li>
+                <li><span>20</span> = KRIG-6</li>
+                <li><span>21</span> = VARGO 52</li>
+                <li><span>22</span> = OTS-9</li>
+                <li><span>23</span> = KNIFE</li>
+                <li><span>24</span> = TOMOHAWKS (LETHAL)</li>
+                <li><span>25</span> = BULLFROG</li>
+                <li><span>26</span> = BASEBALL BAT</li>
+                <li><span>27</span> = MARSHAL</li>
+                <li><span>28</span> = 1911</li>
+                <li><span>29</span> = MACE</li>
+                <li><span>31</span> = KSP 45</li>
+                <li><span>32</span> = GRENADE (LETHAL)</li>
+                <li><span>33</span> = MAGNUM</li>
+                <li><span>34</span> = STIMSHOT (TACTICAL)</li>
+                <li><span>35</span> = GRAPPLE</li>
+                <li><span>36</span> = HAMMER AND SICKLE</li>
+                <li><span>38</span> = CIGMA 2</li>
+                <li><span>39</span> = SAI</li>
+                <li><span>41</span> = SEMTEX (LETHAL)</li>
+                <li><span>50</span> = PELINGTON 703</li>
+                <li><span>51</span> = FARA 83</li>
+                <li><span>52</span> = GRAPPLE</li>
+                <li><span>53</span> = DMR 14</li>
+                <li><span>54</span> = TYPE 63</li>
+                <li><span>55</span> = HAUER 77</li>
+                <li><span>56</span> = C58</li>
+                <li><span>57</span> = AUG</li>
+                <li><span>58</span> = M16</li>
+                <li><span>59</span> = RAI K-84</li>
+                <li><span>61</span> = MP5</li>
+                <li><span>62</span> = STUN GRENADE (LETHAL)</li>
+                <li><span>63</span> = NAIL GUN</li>
+                <li><span>64</span> = LC10</li>
+                <li><span>65</span> = AK74U</li>
+                <li><span>66</span> = MOLOTOV (LETHAL)</li>
+                <li><span>67</span> = MAC-10</li>
+                <li><span>68</span> = RPD</li>
+                <li><span>69</span> = SCYTHE</li>
+                <li><span>70</span> = EM2</li>
+                <li><span>71</span> = BATTLE AXE</li>
+                <li><span>72</span> = LW3-TUNDRA</li>
+                <li><span>73</span> = CANE</li>
+                <li><span>74</span> = PPSH-41</li>
+                <li><span>75</span> = LT53 KAZIMIR (TACTICAL)</li>
+                <li><span>76</span> = GROZA</li>
+                <li><span>77</span> = QBZ-83</li>
+                <li><span>78</span> = ZRG-20MM</li>
+                <li><span>79</span> = GALLO SA12</li>
+                <li><span>80</span> = MG 82</li>
+                <li><span>81</span> = XM4</li>
+                <li><span>82</span> = C4 (LETHAL)</li>
+                <li><span>83</span> = LAPA</li>
+                <li><span>84</span> = TEC-9</li>
+                <li><span>85</span> = RAY GUN</li>
+                <li><span>86</span> = HEALTH (TACTICAL) (IDK)</li>
+                <li><span>88</span> = MILANDO 821</li>
+                <li><span>89</span> = CYMBAL MONKEY (TACTICAL)</li>
+                <li><span>90</span> = STREETSWEEPER</li>
+                <li><span>91</span> = UGR</li>
+                <li><span>92</span> = CRBR-S SWARM</li>
+                <li><span>93</span> = M60</li>
+                <li><span>94</span> = GUNSHIP (MODDED)</li>
+                <li><span>96</span> = GUNSHIP (MODDED FISTS)</li>
+                <li><span>97</span> = GUNSHIP (MODDED FAST FIRE)</li>
+                <li><span>98</span> = SENTRY</li>
+                <li><span>100</span> = STRAFE RUN (MODDED)</li>
+                <li><span>101</span> = ATTACK HELICOPTER (MODDED)</li>
+                <li><span>102</span> = DRONE SQUAD (MODDED)</li>
+                <li><span>103</span> = SAM TURRET (MODDED)</li>
+                <li><span>104</span> = RC-XD (MODDED)</li>
+                <li><span>109</span> = CHOPPER GUNNER (WORKING)</li>
+                <li><span>111</span> = ATTACK HELICOPTER</li>
+                <li><span>143</span> = DECOY (TACTICAL)</li>
+                <li><span>145</span> = MAGNUM</li>
+                <li><span>157</span> = AMP63</li>
+                <li><span>169</span> = SMOKE BOMB (TACTICAL)</li>
+                <li><span>174</span> = FRAG GRENADE (LETHAL)</li>
+                <li><span>176</span> = SCREAM KNIFE</li>
+                <li><span>179</span> = PROXIMITY MINE</li>
+                <li><span>186</span> = GRAPPLE</li>
+                <li><span>191</span> = CRUISE MISSLE</li>
+                <li><span>192</span> = CRUISE MISSLE</li>
+                <li><span>198</span> = JAMMER</li>
+                <li><span>205</span> = 1911</li>
+                <li><span>207</span> = INFECTED KNIFE</li>
+                <li><span>224</span> = SNOW BALLS</li>
+                <li><span>225</span> = BARB WIRE</li>
+                <li><span>226</span> = SOME SORT OF GRENADE (LETHAL)</li>
+                <li><span>228</span> = MODDED FISTS (IDK)</li>
+                <li><span>232</span> = FLASH BANG (TACTICAL)</li>
+                <li><span>233</span> = ALIEN FISTS</li>
+                <li><span>238</span> = MODDED KNIFE</li>
+                <li><span>239</span> = TROPHY SYSTEM</li>
+                <li><span>240</span> = DIAMATTI</li>
+                <li><span>248</span> = EXPLOSIVE FISTS (EXPLOSIVE)</li>
+                <li><span>249</span> = MODDED FISTS (BULLETS)</li>
+                <li><span>252</span> = MARSHAL</li>
+                <li><span>265</span> = MODDED GRENADE NUKES</li>
+                <li><span>266</span> = SCREAM KNIFE</li>
+                <li><span>268</span> = MODDED GRENADE FIRE NUKE</li>
+                <li><span>269</span> = INVISIBLE GRENADE EXPLOSION</li>
+                <li><span>271</span> = MODDED FISTS (BULLETS)</li>
+                <li><span>272</span> = MODDED FISTS EXPLOSIVE (NO DAMAGE)</li>
+                <li><span>273</span> = TWIN .50 BROWNING (MODDED)</li>
+                <li><span>275</span> = MODDED FISTS (BULLETS)</li>
+                <li><span>279</span> = XM4</li>
+                <li><span>282</span> = XM4</li>
+                <li><span>284</span> = XM4</li>
+                <li><span>292</span> = XM4</li>
+                <li><span>313</span> = ROAD RAGE</li>
+                <li><span>320</span> = DOOM & GLOOM</li>
+                <li><span>321</span> = AUG-M3NT</li>
+                <li><span>322</span> = MODDED FISTS (SHOOTS GREEN SHIT)</li>
+                <li><span>324</span> = DISCORDIAN DISRUPTOR</li>
+                <li><span>327</span> = D.I.E NOVA-5</li>
+                <li><span>329</span> = GRAND SLAMMER</li>
+                <li><span>330</span> = GRAVITAS</li>
+                <li><span>332</span> = RING OF FIRE (FIELD UPGRADE)</li>
+                <li><span>337</span> = HEAD CANNON</li>
+                <li><span>338</span> = CNIDOBLASTER</li>
+                <li><span>339</span> = DRAGON EXECUTIONER</li>
+                <li><span>341</span> = TENEBRIS ANIMA (PAP CHRSALAX SAVAGER)</li>
+                <li><span>343</span> = PRIVATE EYE</li>
+                <li><span>344</span> = D.E.A.D. VIRULENCE</li>
+                <li><span>345</span> = PERMAFROST</li>
+                <li><span>346</span> = PAIN & SUFFERING</li>
+                <li><span>348</span> = BLITZKRIG 99</li>
+                <li><span>349</span> = CRBR-TRN QUINTESSENCE</li>
+                <li><span>350</span> = LANCE A LOT</li>
+                <li><span>353</span> = PAIN</li>
+                <li><span>354</span> = SERKITS KISS (MODDED)</li>
+                <li><span>355</span> = D.E.A.D. IMMOLATOR</li>
+                <li><span>357</span> = DEMOLISHER K14</li>
+                <li><span>358</span> = CRBR-TRN ENLIGHTENMENT</li>
+                <li><span>359</span> = TESLA STORM (FIELD UPGRADE)</li>
+                <li><span>362</span> = GRISLY REAPER</li>
+                <li><span>363</span> = D.E.A.D. GLACIALATOR</li>
+                <li><span>368</span> = XENO MATTER 4000</li>
+                <li><span>369</span> = CR17-D20</li>
+                <li><span>370</span> = CARV-O-MATIC</li>
+                <li><span>371</span> = AK-74U</li>
+                <li><span>372</span> = DIE-A-LOTTI & DIE-A-MORI</li>
+                <li><span>373</span> = INFINITE RING OF FIRE</li>
+                <li><span>375</span> = DEVILS BROADSIDE</li>
+                <li><span>376</span> = REDECORATOR</li>
+                <li><span>377</span> = ANATHEMA</li>
+                <li><span>378</span> = CRBR-TRN SEEKER</li>
+                <li><span>379</span> = SMALL CALIBER (MODDED)</li>
+                <li><span>380</span> = 1911</li>
+                <li><span>382</span> = RASPUTTINS RETRIBUTION</li>
+                <li><span>383</span> = YAOGUAI</li>
+                <li><span>384</span> = SCREAM KNIFE</li>
+                <li><span>385</span> = MODDED WEAPON (EXPLOSIVE BLUE SHIT)</li>
+                <li><span>387</span> = SAIKOU & SAINARA</li>
+                <li><span>388</span> = D.E.A.D. THUNDERBLAST</li>
+                <li><span>389</span> = WRECK9</li>
+                <li><span>390</span> = 1911</li>
+                <li><span>391</span> = WINNOWER</li>
+                <li><span>392</span> = CRBR-TRN DUALITY</li>
+                <li><span>393</span> = AETHER SHROUD (FIELD UPGRADE)</li>
+                <li><span>394</span> = E-MC2</li>
+                <li><span>395</span> = FROST BLAST (FIELD UPGRADE)</li>
+                <li><span>400</span> = BANANA LETHAL (IDK)</li>
+                <li><span>402</span> = SHARP SHOOTER</li>
+                <li><span>403</span> = WARDENS SHOTGUN</li>
+                <li><span>405</span> = LA LLORONA</li>
+                <li><span>406</span> = YAMIKIRIMARU</li>
+                <li><span>407</span> = HIGH ANXIETY</li>
+                <li><span>408</span> = HEALING AURA (FIELD UPGRADE)</li>
+                <li><span>413</span> = BOIUNA</li>
+                <li><span>414</span> = OMEGA 3FA</li>
+                <li><span>415</span> = PELLEGRINO DELLA MORTE</li>
+                <li><span>420</span> = TESLA STORM (FIELD UPGRADE)</li>
+                <li><span>424</span> = SOUL HARVESTER</li>
+                <li><span>426</span> = ENERGY MINE (FIELD UPGRADE)</li>
+                <li><span>427</span> = BUFOTOXIN</li>
+                <li><span>428</span> = FRENZIED GUARD (FIELD UPGRADE)</li>
+                <li><span>433</span> = TUGARIN</li>
+                <li><span>434</span> = PSYCHOTROPIC THUNDER</li>
+                <li><span>435</span> = THE QUEENSWOMAN</li>
+                <li><span>440</span> = NEARA 51</li>
+                <li><span>449</span> = THE LAW</li>
+                <li><span>451</span> = SWISS KH3353</li>
+                <li><span>452</span> = D.E.A.D. JOLTSURGE</li>
+                <li><span>453</span> = PRIVATE EYE & FEMME FATALE</li>
+                <li><span>455</span> = AXE ME AGAIN</li>
+                <li><span>456</span> = SUCCUBUS STINGER</li>
+                <li><span>460</span> = LAW AND ORDER</li>
+                <li><span>462</span> = ZJOLNIR</li>
+                <li><span>466</span> = FIRE BOMB (LETHAL)</li>
+                <li><span>471</span> = ORION 777</li>
+                <li><span>472</span> = MYSTIC PONY EXPRESS</li>
+                <li><span>474</span> = HELL VETICA</li>
+                <li><span>476</span> = D.I.E. ELECTROBOLT</li>
+                <li><span>478</span> = PORTERS X2 RAY GUN</li>
+                <li><span>480</span> = EL SLASHER</li>
+                <li><span>481</span> = MATTER DISMANTLER</li>
+                <li><span>482</span> = SPECIMEN (MODDED)</li>
+                <li><span>484</span> = PAIR OSTRIKAS</li>
+                <li><span>485</span> = ACE OF SPADES</li>
+                <li><span>487</span> = D.I.E. CRYO-EMITTER</li>
+                <li><span>490</span> = HERALD OF WOE</li>
+                <li><span>491</span> = DIE BREAKER</li>
+                <li><span>493</span> = RUINOUS PAIN DISTRIBUTOR</li>
+                <li><span>494</span> = D.I.E. NOVA-5</li>
+                <li><span>495</span> = WARDENS SHOTGUN</li>
+                <li><span>497</span> = SKULLSPLITTER</li>
+                <li><span>498</span> = D.I.E. THERMOPHASIC</li>
+                <li><span>499</span> = RAY GUN</li>
+                <li><span>500</span> = AK-74NOFU</li>
+                <li><span>501</span> = DOOM</li>
+                <li><span>502</span> = ROYALE WITH LEAD</li>
+                <li><span>504</span> = ROCKS (LETHAL)</li>
+                <li><span>505</span> = BROKEN CLAYMORE</li>
+                <li><span>511</span> = CRUNCH TIME</li>
+                <li><span>512</span> = CLOSING ARGUMENT</li>
+                <li><span>516</span> = CULEBRE</li>
+                <li><span>518</span> = H-NGM-N</li>
+                <li><span>519</span> = DIE-A-LOTTI</li>
+                <li><span>521</span> = SMOOTHBORE (MODDED EXPLOSION)</li>
+                <li><span>525</span> = (MODDED EXPLOSION)(IDK)</li>
+            </ul>
 </body>
+
 </html>
