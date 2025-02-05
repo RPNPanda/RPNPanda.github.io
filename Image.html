@@ -15,10 +15,15 @@
 </head>
 <body>
     <h1>Temp Image Store</h1>
-    <input type="file" id="imageUpload" accept="image/*">
+     <div class="button-container">
+          <input class="container" type="file" id="imageUpload" accept="image/*">
+    </div>
     <br>
     <input type="text" id="imageUrl" readonly>
-    <button class="button85" onclick="copyUrl()">Copy URL</button>
+    <div class="button-container">
+           <button class="button-85" onclick="copyUrl()">Copy URL</button>
+    </div>
+    
     <br>
     <img id="displayImage" style="display:none;">
     <p id="status"></p>
