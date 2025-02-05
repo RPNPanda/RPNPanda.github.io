@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPN Mods | Image</title>
+    <title>RPN Mods | Loader</title>
     <meta name="description" content="Join RPN Mods for top-quality game cheats, exceptional support, and competitive pricing, enhancing your gaming experience with reliable and effective solutions.">
     <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
     <meta property="og:title" content="RPN Mods">
@@ -12,27 +12,53 @@
     <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
-   
 </head>
 <body>
     <h1>Temp Image Store</h1>
     <input type="file" id="imageUpload" accept="image/*">
     <br>
     <input type="text" id="imageUrl" readonly>
-    <button onclick="copyUrl()">Copy URL</button>
+    <button class="button85" onclick="copyUrl()">Copy URL</button>
     <br>
     <img id="displayImage" style="display:none;">
+    <p id="status"></p>
 
     <script>
-        function showImage(event) {
+        const IMGUR_CLIENT_ID = 'b13b675444bd753';
+
+        document.getElementById('imageUpload').addEventListener('change', uploadImage);
+
+        function uploadImage(event) {
             let file = event.target.files[0];
-            if (file) {
-                let url = URL.createObjectURL(file);
-                document.getElementById('imageUrl').value = url;
-                let img = document.getElementById('displayImage');
-                img.src = url;
-                img.style.display = 'block';
-            }
+            if (!file) return;
+            
+            let formData = new FormData();
+            formData.append("image", file);
+            document.getElementById('status').innerText = 'Uploading...';
+            
+            fetch("https://api.imgur.com/3/image", {
+                method: "POST",
+                headers: {
+                    Authorization: `Client-ID ${IMGUR_CLIENT_ID}`
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    let url = data.data.link;
+                    document.getElementById('imageUrl').value = url;
+                    let img = document.getElementById('displayImage');
+                    img.src = url;
+                    img.style.display = 'block';
+                    document.getElementById('status').innerText = 'Upload successful!';
+                } else {
+                    document.getElementById('status').innerText = 'Upload failed.';
+                }
+            })
+            .catch(() => {
+                document.getElementById('status').innerText = 'Error uploading image.';
+            });
         }
 
         function copyUrl() {
@@ -41,8 +67,6 @@
             document.execCommand("copy");
             alert("URL Copied to Clipboard!");
         }
-
-        document.getElementById('imageUpload').addEventListener('change', showImage);
     </script>
 </body>
 </html>
