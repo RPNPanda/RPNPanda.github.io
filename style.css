@@ -109,12 +109,13 @@ hr {
     user-select: none;
     font-size: 16px;
     font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease-in-out, transform 0.2s ease;
 }
 
 .button-85:hover {
     background: #d50000;
-    transform: translateY(-3px);
+    transform: scale(1.1); /* Slight size increase */
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.8); /* Red highlight */
 }
 
 .button-85:before {
@@ -138,6 +139,11 @@ hr {
     100% {
         opacity: 1;
     }
+}
+
+.button-85:hover:before {
+    opacity: 1;
+    filter: blur(14px);
 }
 
 .button-85:after {
