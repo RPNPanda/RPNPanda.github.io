@@ -1,8 +1,9 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);
-    background-image: url('https://raw.githubusercontent.com/RPNPanda/RPNPanda/refs/heads/main/New%20Back.png'); /* Add subtle texture */
+    background: linear-gradient(135deg, #181818 0%, #2b2b2b 100%);
+    background-image: url('https://raw.githubusercontent.com/RPNPanda/RPNPanda/refs/heads/main/New%20Back.png'); /* Subtle texture */
     background-size: cover;
+    background-attachment: fixed;
     color: #FFFFFF;
     margin: 0;
     padding: 0;
@@ -12,74 +13,79 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
+
 .tabs {
     display: flex;
     justify-content: center;
-    background-color: rgba(26, 26, 26, 0.8);
-    padding: 10px;
+    background: rgba(20, 20, 20, 0.85);
+    padding: 12px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #444;
+    backdrop-filter: blur(8px);
 }
 
 .tab-button {
-    background-color: #333;
+    background: linear-gradient(135deg, #2a2a2a 0%, #3d3d3d 100%);
     border: none;
     color: #FFFFFF;
-    padding: 8px 12px;
-    margin: 0 4px;
+    padding: 10px 16px;
+    margin: 0 6px;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 6px;
+    font-size: 15px;
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .tab-button:hover {
-    background-color: #d50000;
-    transform: scale(1.05);
+    background: #d50000;
+    transform: translateY(-2px);
 }
 
 .container {
-    max-width: 800px;
+    max-width: 850px;
     width: 90%;
-    padding: 20px;
-    background-color: rgba(28, 28, 28, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
     text-align: center;
-    margin-top: 60px;
+    margin-top: 70px;
+    backdrop-filter: blur(10px);
 }
 
 .scrollable-content {
-    max-height: 400px; /* Set the height you want */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 10px; /* Optional padding */
-    background-color: rgba(50, 50, 50, 0.8); /* Slightly different background for contrast */
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 12px;
+    background: rgba(50, 50, 50, 0.8);
     border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 26px;
     color: #f20000;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
 }
 
 p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 12px;
 }
 
 hr {
     margin-top: 100px;
     border: none;
-    border-top: 1px solid #444;
+    border-top: 1px solid #555;
 }
 
 .button-container {
@@ -91,7 +97,7 @@ hr {
 }
 
 .button-85 {
-    padding: 0.6em 2em;
+    padding: 0.7em 2.2em;
     border: none;
     outline: none;
     color: #FFFFFF;
@@ -99,34 +105,35 @@ hr {
     cursor: pointer;
     position: relative;
     z-index: 0;
-    border-radius: 10px;
+    border-radius: 12px;
     user-select: none;
     font-size: 16px;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .button-85:hover {
     background: #d50000;
+    transform: translateY(-3px);
 }
 
 .button-85:before {
     content: "";
-    background: rgba(255, 0, 0, 0.5);
+    background: rgba(255, 0, 0, 0.4);
     position: absolute;
     top: -4px;
     left: -4px;
     z-index: -1;
     width: calc(100% + 8px);
     height: calc(100% + 8px);
-    filter: blur(8px);
-    border-radius: 10px;
+    filter: blur(10px);
+    border-radius: 12px;
     animation: glowing-button-85 1.5s infinite alternate;
 }
 
 @keyframes glowing-button-85 {
     0% {
-        opacity: 0.5;
+        opacity: 0.6;
     }
     100% {
         opacity: 1;
@@ -142,7 +149,7 @@ hr {
     background: #222;
     left: 0;
     top: 0;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .weapon-list {
@@ -152,22 +159,25 @@ hr {
     text-align: left;
     max-height: 400px;
     overflow-y: auto;
-    background: rgba(40, 40, 40, 0.8);
+    background: rgba(40, 40, 40, 0.85);
     justify-content: center;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.7);
 }
+
 .weapon-list li {
-    adding: 8px;
-    border-bottom: 1px solid #444;
-    transition: background 0.3s;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    transition: background 0.3s ease;
 }
+
 .weapon-list li:hover {
-    background: rgba(255, 0, 0, 0.2);
+    background: rgba(255, 0, 0, 0.3);
 }
+
 .weapon-list li span {
     color: #f20000;
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: 12px;
 }
