@@ -48,17 +48,28 @@ body {
     transform: translateY(-2px);
 }
 
+@keyframes neon-border {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
 .container {
-    max-width: 850px;
-    width: 90%;
-    padding: 25px;
-    background: rgba(30, 30, 30, 0.6);
-    border-radius: 14px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    margin: 70px auto; /* Center container horizontally */
-    backdrop-filter: blur(10px);
-    position: relative; /* Ensure contained elements are positioned correctly */
+  --border-angle: 0deg;
+  --neon-color: red;
+  border: 4px solid;
+  border-image: conic-gradient(
+    from var(--border-angle),
+    transparent 0deg,
+    var(--neon-color) 90deg,
+    transparent 180deg,
+    var(--neon-color) 270deg,
+    transparent 360deg
+  ) 1;
+  animation: neon-border 4s linear infinite;
 }
 
 .scrollable-content {
