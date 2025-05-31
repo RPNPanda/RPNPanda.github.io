@@ -1,3 +1,5 @@
+update this too
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,60 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPN Mods | Loader</title>
     <meta name="description" content="Join RPN Mods for top-quality game cheats, exceptional support, and competitive pricing, enhancing your gaming experience with reliable and effective solutions.">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
     <meta property="og:title" content="RPN Mods">
     <meta property="og:description" content="Download RPN Mods Loaders">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rpnmods.org"> <!-- Update with actual URL if different -->
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
+    <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://rpnmods.org/style.css">
-
-    <script>
+<link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
+<script>
+        // Function to detect mobile devices
         function isMobileDevice() {
             return /Mobi|Android/i.test(navigator.userAgent);
         }
 
-        window.onload = function () {
+        // Redirect or show a message if the user is on a mobile device
+        window.onload = function() {
             if (isMobileDevice()) {
-                document.body.innerHTML = `
-                    <div style="text-align:center; padding: 50px;">
-                        <h1>Access Denied</h1>
-                        <p>This site is not accessible on mobile devices.</p>
-                    </div>`;
+                document.body.innerHTML = "<h1>Access Denied</h1><p>This site is not accessible on mobile devices.</p>";
             }
         };
     </script>
 </head>
 <body>
-    <!-- Navigation Tabs -->
-    <nav class="tabs">
+    <div class="tabs">
         <a href="https://rpnmods.org/" class="tab-button">Main Site</a>
         <a href="https://rpnmods.org/loader" class="tab-button">Download Loader</a>
         <a href="https://rpnmods.org/ip" class="tab-button">Show IP For Lost Key's</a>
         <a href="https://rpnmods.org/cw/weaponID" class="tab-button">Cold War Weapon List</a>
         <a href="https://rpnmods.org/how-to-use" class="tab-button">How To Use</a>
-    </nav>
+    </div>
 
-    <!-- Cold War Loader Section -->
-    <section class="container">
-        <h1>Cold War</h1>
+    <div class="container">
+        <div class="ip">
+            <p>Cold War</p>
+        </div>
         <div class="button-container">
-            <a href="https://rpnmods.org/cw/loader">
-                <button class="button-85" role="button">Download Cold War Loader</button>
+            <a href="https://rpnmods.org/cw/loader" class="center-container">
+                <button class="button-85" role="button">Cold War Loader</button>
             </a>
         </div>
-    </section>
+    </div>
 
     <hr>
 
-    <!-- Black Ops 6 Loader Section -->
-    <section class="container">
-        <h1>Black Ops 6</h1>
+    <div class="container">
+        <div class="ip">
+            <p>Black Ops 6</p>
+        </div>
         <div class="button-container">
-            <a href="https://rpnmods.org/bo6/loader">
-                <button class="button-85" role="button">Download Black Ops 6 Loader</button>
+            <a href="https://rpnmods.org/bo6/loader" class="center-container">
+                <button class="button-85" role="button">Black Ops 6 Loader</button>
             </a>
         </div>
-    </section>
+    </div>
 </body>
 </html>
