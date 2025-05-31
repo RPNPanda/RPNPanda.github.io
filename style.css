@@ -1,177 +1,166 @@
 /* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #101010, #1c1c1c);
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
     background-image: url('https://raw.githubusercontent.com/RPNPanda/RPNPanda/refs/heads/main/New%20Back.png');
     background-size: cover;
     background-attachment: fixed;
-    color: #f4f4f4;
+    color: #f0f0f0;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
+    display: flex;
     flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
 }
 
-/* Top Navigation Tabs */
+/* Navigation */
 .tabs {
-    display: flex;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.65);
-    padding: 14px 0;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 999;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-    border-bottom: 1px solid #333;
-    backdrop-filter: blur(10px);
+    padding: 16px 0;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid #292929;
 }
 
 .tab-button {
-    background: #1e1e1e;
+    background: transparent;
+    color: #ffffff;
     border: 1px solid #444;
-    color: #fff;
-    padding: 10px 20px;
-    margin: 0 8px;
-    cursor: pointer;
-    border-radius: 6px;
+    padding: 10px 22px;
+    border-radius: 8px;
     font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .tab-button:hover {
-    background: #e50914;
-    border-color: #e50914;
+    background: #ff1e1e;
+    border-color: #ff1e1e;
+    box-shadow: 0 0 12px #ff1e1e;
     transform: translateY(-2px);
 }
 
-/* Main Container */
+/* Containers */
 .container {
     max-width: 960px;
     width: 90%;
-    margin-top: 100px;
-    padding: 30px;
-    background: rgba(28, 28, 28, 0.85);
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    margin-top: 120px;
+    padding: 35px;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(14px);
     text-align: center;
-    backdrop-filter: blur(12px);
-}
-
-/* Scrollable Box */
-.scrollable-content {
-    max-height: 420px;
-    overflow-y: auto;
-    padding: 15px;
-    background: rgba(48, 48, 48, 0.65);
-    border-radius: 10px;
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Headings */
 h1 {
-    font-size: 30px;
-    color: #ff1c1c;
-    margin-bottom: 20px;
+    font-size: 32px;
+    color: #ff1e1e;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
 }
 
-/* Text */
 p {
     font-size: 18px;
-    line-height: 1.7;
-    color: #d0d0d0;
-    margin-bottom: 14px;
+    line-height: 1.8;
+    color: #cccccc;
 }
 
 /* Divider */
 hr {
-    margin: 24px 0;
+    margin: 36px 0;
     border: none;
-    border-top: 1px solid #444;
+    border-top: 1px solid #3c3c3c;
 }
 
-/* Buttons Container */
+/* Button Container */
 .button-container {
     display: flex;
     flex-direction: column;
-    gap: 18px;
     align-items: center;
-    margin-top: 30px;
+    gap: 20px;
+    margin-top: 24px;
 }
 
 /* Glowing Button */
 .button-85 {
     position: relative;
-    padding: 12px 28px;
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background: #ff1e1e;
     border: none;
     border-radius: 10px;
-    background: #e50914;
-    color: white;
-    font-size: 17px;
-    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-85:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+    transform: scale(1.07);
+    box-shadow: 0 0 20px rgba(255, 30, 30, 0.7);
 }
 
-.button-85:before {
+.button-85::before {
     content: "";
     position: absolute;
     top: -6px;
     left: -6px;
     right: -6px;
     bottom: -6px;
-    background: rgba(229, 9, 20, 0.4);
-    z-index: -1;
+    background: rgba(255, 30, 30, 0.35);
+    filter: blur(14px);
     border-radius: 12px;
-    filter: blur(12px);
-    animation: glowing 1.5s infinite alternate;
+    z-index: -1;
+    animation: pulse-glow 1.6s infinite alternate;
 }
 
-@keyframes glowing {
-    0% {
-        opacity: 0.5;
+@keyframes pulse-glow {
+    from {
+        opacity: 0.4;
     }
-    100% {
+    to {
         opacity: 1;
     }
 }
 
 /* Weapon List */
 .weapon-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-    background: rgba(40, 40, 40, 0.6);
+    background: rgba(30, 30, 30, 0.85);
     border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    padding: 18px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+    list-style: none;
+    margin: 0;
 }
 
 .weapon-list li {
-    padding: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid #555;
+    color: #e0e0e0;
     transition: background 0.3s ease;
 }
 
 .weapon-list li:hover {
-    background: rgba(229, 9, 20, 0.25);
+    background: rgba(255, 30, 30, 0.15);
 }
 
 .weapon-list li span {
-    color: #ff1c1c;
+    color: #ff1e1e;
     font-weight: bold;
     margin-right: 10px;
 }
