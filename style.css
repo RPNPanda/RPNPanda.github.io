@@ -55,12 +55,16 @@ body {
     width: 90%;
     margin-top: 100px;
     padding: 30px;
-    background: rgba(28, 28, 28, 0.85);
+    background: 
+        linear-gradient(rgba(28, 28, 28, 0.85), rgba(28, 28, 28, 0.85)) padding-box,
+        conic-gradient(from 0turn, #ff1c1c, #e50914, #ff1c1c) border-box;
+    border: 4px solid transparent;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
     text-align: center;
     backdrop-filter: blur(12px);
 }
+
 
 /* Scrollable Box */
 .scrollable-content {
