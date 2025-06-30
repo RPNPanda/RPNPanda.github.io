@@ -181,6 +181,7 @@ p {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
     color: #fff;
     background: #374151;
+    text-decoration: none;
 }
 
 .button-85:hover {
