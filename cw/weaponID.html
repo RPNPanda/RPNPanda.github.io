@@ -1,120 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPN Mods | Weapon ID's</title>
-    <meta name="description" content="Join RPN Mods for top-quality game cheats, exceptional support, and competitive pricing, enhancing your gaming experience with reliable and effective solutions.">
-    <meta property="og:title" content="RPN Mods">
-    <meta property="og:description" content="Cold war Zombie Trainer Weapon ID's">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your actual website URL -->
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
-    <style>
-        .search-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        #searchBar {
-            display: block;
-            margin: 20px auto;
-            /* Center horizontally and add vertical spacing */
-            width: 80%;
-            /* Adjust the width to make it responsive */
-            max-width: 500px;
-            /* Limit the maximum width */
-            padding: 0.7em 1em;
-            /* Adjust padding for better visual balance */
-            border: none;
-            outline: none;
-            color: #FFFFFF;
-            background: rgba(20, 20, 20, 1);
-            cursor: pointer;
-            z-index: 0;
-            border-radius: 12px;
-            user-select: none;
-            font-size: 16px;
-            font-weight: bold;
-            transition: all 0.3s ease-in-out, transform 0.2s ease;
-            border: 2px solid rgba(255, 0, 0, 0.3);
-            /* Red border */
-            text-align: center;
-        }
-
-
-
-        #searchBar::placeholder {
-            color: #8a8a8a;
-        }
-
-        .weapon-list li {
-            padding: 5px;
-            font-size: 18px;
-            color: #ffffff;
-        }
-    </style>
-    <script>
-        // Function to detect mobile devices
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        // Redirect or show a message if the user is on a mobile device
-        window.onload = function() {
-            if (isMobileDevice()) {
-                document.body.innerHTML = "<h1>Access Denied</h1><p>This site is not accessible on mobile devices.</p>";
-            }
-        };
-    </script>
-    <script>
-        function searchWeapons() {
-            let input = document.getElementById('searchBar').value.toLowerCase();
-            let list = document.getElementById('weaponList');
-            let items = list.getElementsByTagName('li');
-
-            for (let i = 0; i < items.length; i++) {
-                let text = items[i].textContent.toLowerCase();
-                if (text.includes(input)) {
-                    items[i].style.display = "";
-                } else {
-                    items[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPN Mods | Weapon ID's</title>
+  <meta name="description" content="Cold War Zombie Trainer Weapon ID's">
+  <meta property="og:title" content="RPN Mods">
+  <meta property="og:description" content="Cold War Zombie Trainer Weapon ID's">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/120151531?v=4" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
+  <style>
+    .search-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #searchBar {
+      display: block;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 500px;
+      padding: 0.7em 1em;
+      border: 2px solid rgba(255, 0, 0, 0.3);
+      border-radius: 12px;
+      background: rgba(20, 20, 20, 1);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      transition: all 0.3s ease-in-out, transform 0.2s ease;
+    }
+    #searchBar::placeholder {
+      color: #8a8a8a;
+    }
+    .weapon-list li {
+      padding: 6px;
+      font-size: 16px;
+      color: #e0e0e0;
+      border-bottom: 1px solid #333;
+    }
+    .weapon-list li span {
+      color: #f20000;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  </style>
+  <script>
+    function isMobileDevice() {
+      return /Mobi|Android/i.test(navigator.userAgent);
+    }
+    window.onload = function() {
+      if (isMobileDevice()) {
+        document.body.innerHTML = "<h1>Access Denied</h1><p>This site is not accessible on mobile devices.</p>";
+      }
+    };
+    function searchWeapons() {
+      let input = document.getElementById('searchBar').value.toLowerCase();
+      let list = document.getElementById('weaponList');
+      let items = list.getElementsByTagName('li');
+      for (let i = 0; i < items.length; i++) {
+        let text = items[i].textContent.toLowerCase();
+        items[i].style.display = text.includes(input) ? "" : "none";
+      }
+    }
+  </script>
 </head>
-
 <body>
-    <div class="tabs">
-        <a href="https://rpnmods.org/" class="tab-button">Main Site</a>
-        <a href="https://rpnmods.org/loader" class="tab-button">Download Loader</a>
-        <a href="https://rpnmods.org/ip" class="tab-button">Show IP For Lost Key's</a>
-        <a href="https://rpnmods.org/cw/weaponID" class="tab-button">Cold War Weapon List</a>
-        <a href="https://rpnmods.org/how-to-use" class="tab-button">How To Use</a>
+  <div class="tabs">
+    <div>
+      <strong style="color:white; font-size: 18px;">RPN Mods</strong>
     </div>
-    <div class="container">
-        <h1>Weapon List</h1>
-        <p style="color: #696969; text-align: center;">List credits _exam</p>
+    <div>
+      <a href="https://rpnmods.org/" class="tab-button">Main Site</a>
+      <a href="https://rpnmods.org/how-to-use" class="tab-button">How To Use</a>
+      <a href="https://rpnmods.org/cw/weaponID" class="tab-button">Cold War Weapon List</a>
+      <a href="https://rpnmods.org/ip" class="tab-button">Show IP For Lost Key's</a>
+      <a href="https://rpnmods.org/loader" class="tab-button download">Download Loader</a>
+    </div>
+  </div>
 
-        <div class="button-container">
-            <a href="https://rpnmods.org/" target="_blank" class="center-container">
-                <button class="button-85" role="button">RPN Mods website</button>
-            </a>
-            <a href="https://discord.com/invite/rpnmods" target="_blank" class="center-container">
-                <button class="button-85" role="button">RPN Mods Discord Server</button>
-            </a>
-        </div>
-        <ul>
-            <div class="search-container">
-                <input type="text" id="searchBar" placeholder="Search weapons..." onkeyup="searchWeapons()">
-            </div>
+  <div class="container">
+    <h1>Cold War Weapon ID List</h1>
+    <div class="subtitle">Search or scroll through all known weapon IDs. Credits to <strong>_exam</strong>.</div>
 
-            <ul class="weapon-list" id="weaponList">
-                <li><span>1</span> = Default Weapon</li>
+    <div class="search-container">
+      <input type="text" id="searchBar" placeholder="Search weapons..." onkeyup="searchWeapons()">
+    </div>
+
+    <div class="scrollable-content">
+      <ul class="weapon-list" id="weaponList">
+        <li><span>1</span> = Default Weapon</li>
                 <li><span>2</span> = CRBR-S BLAZER</li>
                 <li><span>3</span> = CRBR-S</li>
                 <li><span>4</span> = CARV.2</li>
@@ -353,7 +330,17 @@
                 <li><span>519</span> = DIE-A-LOTTI</li>
                 <li><span>521</span> = SMOOTHBORE (MODDED EXPLOSION)</li>
                 <li><span>525</span> = (MODDED EXPLOSION)(IDK)</li>
-            </ul>
-</body>
+      </ul>
+    </div>
 
+    <div class="button-container">
+      <a href="https://rpnmods.org/" target="_blank">
+        <button class="button-85 coldwar" role="button">RPN Mods Website</button>
+      </a>
+      <a href="https://discord.com/invite/rpnmods" target="_blank">
+        <button class="button-85 blackops" role="button">Join Discord Server</button>
+      </a>
+    </div>
+  </div>
+</body>
 </html>
