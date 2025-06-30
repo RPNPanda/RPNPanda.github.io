@@ -13,48 +13,54 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
   <style>
-  .search-container {
-    text-align: center;
-    margin-bottom: 25px;
-  }
+.search-container {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-  #searchBar {
-    display: block;
-    margin: 0 auto 20px;
-    width: 100%;
-    max-width: 500px;
-    padding: 12px 18px;
-    border: 2px solid #0ea5e9;
-    border-radius: 12px;
-    background: rgba(17, 24, 39, 1); /* dark bluish tone */
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    transition: border 0.3s ease, transform 0.2s ease;
-  }
+#searchBar {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 18px;
+  border: 2px solid #e11d48;
+  border-radius: 12px;
+  background: rgba(30, 0, 0, 0.85); /* dark red tint */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: border 0.3s ease, transform 0.2s ease;
+}
 
-  #searchBar::placeholder {
-    color: #94a3b8; /* softer gray-blue */
-  }
+#searchBar::placeholder {
+  color: #b0b0b0; /* soft gray */
+}
 
-  .weapon-list li {
-    padding: 10px 14px;
-    font-size: 16px;
-    color: #e2e8f0;
-    border-bottom: 1px solid rgba(100, 116, 139, 0.2); /* soft divider */
-    display: flex;
-    align-items: center;
-  }
+.weapon-list li {
+  padding: 10px 14px;
+  font-size: 16px;
+  color: #f1f1f1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  transition: background 0.2s ease;
+}
 
-  .weapon-list li span {
-    color: #0ea5e9; /* match site blue */
-    font-weight: 700;
-    margin-right: 12px;
-    min-width: 24px;
-    text-align: right;
-    display: inline-block;
-  }
+.weapon-list li:hover {
+  background: rgba(255, 0, 0, 0.05);
+}
+
+.weapon-list li span {
+  color: #e11d48; /* bold red accent */
+  font-weight: 700;
+  margin-right: 12px;
+  min-width: 24px;
+  text-align: right;
+  display: inline-block;
+}
+
 </style>
 
   <script>
