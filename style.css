@@ -131,7 +131,20 @@ p {
     min-width: 300px;
     text-align: left;
     position: relative;
+
+    /* Add this */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.loader-card > .scrollable-content {
+    max-height: 400px; /* or whatever looks good */
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 5px; /* spacing from scrollbar */
+}
+
 
 .loader-card h2 {
     font-size: 20px;
