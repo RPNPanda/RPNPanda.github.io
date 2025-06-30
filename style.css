@@ -254,6 +254,18 @@ input[type="text"]:focus {
   border-color: #f43f5e;
 }
 
+.loader-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and title */
+  margin-bottom: 10px;
+}
+
+.loader-header img {
+  width: 40px;
+  height: 40px;
+}
+
 /* Weapon List */
 .weapon-list {
   background: rgba(30, 30, 30, 0.6);
