@@ -1,7 +1,8 @@
 /* Global */
 body {
   font-family: 'Segoe UI', 'Roboto', sans-serif;
-  background: linear-gradient(160deg, #0d0d0d 0%, #1a0000 100%);
+  background: url('https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/refs/heads/main/images/Background.png') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   margin: 0;
   padding: 0;
