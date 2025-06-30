@@ -26,18 +26,21 @@ body {
 
 /* Top Nav Bar */
 .tabs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 30px;
-  background-color: #0f172a;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-  font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 30px;
+    background-color: #0f172a;
+    border-bottom: 1px solid #1f2a37;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* ✅ prevent wrap */
+    overflow: hidden;     /* ✅ prevent scroll */
 }
+
 
 .tab-left {
   font-size: 16px;
@@ -68,6 +71,7 @@ body {
   text-decoration: none;
   transition: 0.2s ease;
   border: none;
+    white-space: nowrap;
 }
 
 .tab-button:hover {
