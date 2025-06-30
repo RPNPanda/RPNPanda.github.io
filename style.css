@@ -8,6 +8,10 @@ body {
     overflow-x: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 8px;
@@ -95,12 +99,13 @@ body {
 
 /* Page Container */
 .container {
-    max-width: 1200px;
-    margin: 100px auto 40px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  max-width: 1200px;
+  margin: 140px auto 60px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* Typography */
@@ -144,21 +149,22 @@ p {
 
 /* Loader Cards */
 .loader-section {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
-
 .loader-card {
     background: linear-gradient(145deg, #1a1f2b, #111827);
     padding: 25px;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.6);
     max-width: 480px;
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 400px;
+    min-width: 280px;
     text-align: left;
     position: relative;
 
