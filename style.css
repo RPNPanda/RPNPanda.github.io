@@ -197,6 +197,10 @@ p {
     text-decoration: none;
 }
 
+.button-container a {
+    text-decoration: none;
+}
+
 .button-85:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
