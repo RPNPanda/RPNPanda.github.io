@@ -13,40 +13,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
   <style>
-    .search-container {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    #searchBar {
-      display: block;
-      margin: 20px auto;
-      width: 80%;
-      max-width: 500px;
-      padding: 0.7em 1em;
-      border: 2px solid rgba(255, 0, 0, 0.3);
-      border-radius: 12px;
-      background: rgba(20, 20, 20, 1);
-      color: #FFFFFF;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      transition: all 0.3s ease-in-out, transform 0.2s ease;
-    }
-    #searchBar::placeholder {
-      color: #8a8a8a;
-    }
-    .weapon-list li {
-      padding: 6px;
-      font-size: 16px;
-      color: #e0e0e0;
-      border-bottom: 1px solid #333;
-    }
-    .weapon-list li span {
-      color: #f20000;
-      font-weight: bold;
-      margin-right: 10px;
-    }
-  </style>
+  .search-container {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  #searchBar {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 18px;
+    border: 2px solid #0ea5e9;
+    border-radius: 12px;
+    background: rgba(17, 24, 39, 1); /* dark bluish tone */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    transition: border 0.3s ease, transform 0.2s ease;
+  }
+
+  #searchBar::placeholder {
+    color: #94a3b8; /* softer gray-blue */
+  }
+
+  .weapon-list li {
+    padding: 10px 14px;
+    font-size: 16px;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(100, 116, 139, 0.2); /* soft divider */
+    display: flex;
+    align-items: center;
+  }
+
+  .weapon-list li span {
+    color: #0ea5e9; /* match site blue */
+    font-weight: 700;
+    margin-right: 12px;
+    min-width: 24px;
+    text-align: right;
+    display: inline-block;
+  }
+</style>
+
   <script>
     function isMobileDevice() {
       return /Mobi|Android/i.test(navigator.userAgent);
