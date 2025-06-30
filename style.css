@@ -22,45 +22,75 @@ body {
 
 /* Top Nav Bar */
 .tabs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 30px;
-    background-color: #101823;
-    border-bottom: 1px solid #1f2a37;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+  background-color: #0f172a;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
 }
 
+.tab-left {
+  font-size: 16px;
+  color: #fff;
+}
+
+.tab-center, .tab-right {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo i {
+  color: #0ea5e9;
+  margin-right: 6px;
+}
+
+/* Default tab button */
 .tab-button {
-    background: none;
-    border: none;
-    color: #d1d5db;
-    margin: 0 10px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: color 0.2s ease;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  color: #cbd5e1;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.2s ease;
+  border: none;
 }
 
 .tab-button:hover {
-    color: #38bdf8;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
 }
 
-.tab-button.download {
-    background: #0ea5e9;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s ease;
+/* Special buttons */
+.tab-button.primary {
+  background: #0ea5e9;
+  color: white;
+  font-weight: bold;
 }
 
-.tab-button.download:hover {
-    background: #0284c7;
+.tab-button.primary:hover {
+  background: #0284c7;
+}
+
+.tab-button.dark {
+  background: #1e293b;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #334155;
+}
+
+.tab-button.dark:hover {
+  background: #334155;
 }
 
 /* Page Container */
