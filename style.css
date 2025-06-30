@@ -237,6 +237,11 @@ p {
     text-decoration: none;
 }
 
+a.button-85 {
+  text-decoration: none !important;
+  color: #fff; /* or your button text color */
+}
+
 .button-container a {
     text-decoration: none;
 }
