@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - RPN Mods</title>
+    <link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
+
+    <style>
+        /* Store Page Specific Styles */
+        .store-title {
+            font-size: 42px;
+            color: #fff;
+            text-align: center;
+            margin-top: 140px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 1px solid #222;
+        }
+
+        .product-title {
+            font-size: 20px;
+            color: #fff;
+            margin: 10px 0 5px;
+        }
+
+        .product-price {
+            color: #e11d48;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .product-count {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        .product-button {
+            display: block;
+            margin: 10px auto 20px;
+            padding: 10px 0;
+            width: 80%;
+            background: #e11d48;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+            text-decoration: none !important;
+        }
+
+        .product-button:hover {
+            background: #be123c;
+        }
+
+        .product-button-dark {
+            display: block;
+            margin: 10px auto 20px;
+            padding: 10px 0;
+            width: 80%;
+            background: #1f1f1f;
+            /* Dark gray background */
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none !important;
+            border: 1px solid #2d2d2d;
+            /* Subtle border */
+        }
+
+        .product-button-dark:hover {
+            background: #2d2d2d;
+            /* Slightly lighter gray on hover */
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+            /* Subtle red glow */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tabs">
+        <div class="tab-left">
+            <span class="logo"><i class="fas fa-shield-alt"></i> <strong>RPN Mods</strong></span>
+        </div>
+
+        <div class="tab-right">
+            <a href="https://rpnmods.org/" class="tab-button dark"><i class="fas fa-globe"></i> Main Site</a>
+            <a href="https://rpnmods.org/how-to-use" class="tab-button dark">How To Use</a>
+            <a href="https://rpnmods.org/cw/weaponID" class="tab-button dark"><i class="fas fa-list"></i> Cold War Weapon List</a>
+            <a href="https://rpnmods.org/ip" class="tab-button dark"><i class="fas fa-key"></i> Show IP for Lost Key’s</a>
+            <a href="https://rpnmods.org/loader" class="tab-button primary"><i class="fas fa-download"></i> Download Loader</a>
+        </div>
+    </div>
+
+    <!-- Store Header -->
+    <h1 class="store-title">Our Products</h1>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="images/free-products.png" alt="1v1.lol Menu">
+            <h2 class="product-title">1v1.lol Menu</h2>
+            <p class="product-price">$0.00</p>
+            <a href=" " class="product-button-dark">View Info</a>
+            <a href="product-free.html" class="product-button">Purchase</a>
+        </div>
+
+        <div class="product-card">
+            <img src="images/coldwar-products.png" alt="Cold War Zombie Trainer">
+            <h2 class="product-title">Cold War Zombie Trainer</h2>
+            <p class="product-price">$5.00</p>
+            <a href=" " class="product-button-dark">View Info</a>
+            <a href="product-cw.html" class="product-button">Purchase</a>
+        </div>
+
+        <div class="product-card">
+            <img src="images/bo6-products.png" alt="Black Ops 6 DMA">
+            <h2 class="product-title">Black Ops 6 DMA</h2>
+            <p class="product-price">$6.00 - $17.00</p>
+            <a href=" " class="product-button-dark">View Info</a>
+            <a href="product-bo6.html" class="product-button">Purchase</a>
+        </div>
+
+        <div class="product-card">
+            <img src="images/source-code.png" alt="Source Code">
+            <h2 class="product-title">Source Codes</h2>
+            <p class="product-price">$15.00 - $20.00</p>
+            <a href=" " class="product-button-dark">View Info</a>
+            <a href="product-source.html" class="product-button">Purchase</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
