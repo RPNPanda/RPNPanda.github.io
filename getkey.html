@@ -50,34 +50,32 @@
     <h1>RPN Mods Key Generator</h1>
     <p>To get your free key, go through our Linkvertise page. Once completed, your unique key will be generated for 24 hours.</p>
     <a href="#" class="button" id="startBtn">Get Key</a>
+<script>
+document.getElementById("startBtn").addEventListener("click", async (e) => {
+    e.preventDefault();
+    // Open Linkvertise in iframe or new tab
+    window.open("https://direct-link.net/566237/1v1vlol-steam-cheat", "_blank");
 
-    <script>
-        document.getElementById("startBtn").addEventListener("click", async (e) => {
-            e.preventDefault();
+    // Wait 5-7 seconds before generating the key
+    setTimeout(async () => {
+        try {
+            const res = await fetch("https://keygen-worker.cerise-pagel.workers.dev/gen?token=RPNGEN123");
+            const data = await res.json();
 
-            // Open Linkvertise in new tab
-            window.open("https://direct-link.net/566237/1v1vlol-steam-cheat", "_blank");
+            if (data.key) {
+                // Redirect to key.html with actual key
+                window.location.href = `key.html?key=${data.key}`;
+            } else {
+                alert("Error generating key: " + (data.message || "Unknown error"));
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Failed to generate key!");
+        }
+    }, 7000);
+});
+</script>
 
-            // Wait a few seconds for user to finish
-            setTimeout(async () => {
-                try {
-                    // Call your Worker to generate the key
-                    const res = await fetch("https://keygen-worker.cerise-pagel.workers.dev/gen?token=RPNGEN123");
-                    const data = await res.json();
-
-                    if (data.key) {
-                        // Redirect to key.html with the actual key
-                        window.location.href = `key.html?key=${data.key}`;
-                    } else {
-                        alert("Error generating key: " + (data.message || "Unknown error"));
-                    }
-                } catch (err) {
-                    console.error(err);
-                    alert("Failed to generate key!");
-                }
-            }, 7000); // adjust delay if needed
-        });
-    </script>
 </body>
 
 </html>
