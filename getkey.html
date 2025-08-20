@@ -46,40 +46,38 @@
     </style>
 </head>
 
-<div class="tabs">
-        <div class="tab-left">
-            <span class="logo"><i class="fas fa-shield-alt"></i> <strong>RPN Mods</strong></span>
-        </div>
-
-        <div class="tab-right">
-            <a href="https://rpnmods.org/Products" class="tab-button dark"><i class="fas fa-globe"></i> Products</a>
-            <a href="https://rpnmods.org/how-to-use" class="tab-button dark">How To Use</a>
-            <a href="https://rpnmods.org/cw/weaponID" class="tab-button dark"><i class="fas fa-list"></i> Cold War Weapon List</a>
-            <a href="https://rpnmods.org/ip" class="tab-button dark"><i class="fas fa-key"></i> Show IP for Lost Key’s</a>
-            <a href="https://rpnmods.org/loader" class="tab-button primary"><i class="fas fa-download"></i> Download Loader</a>
-        </div>
-    </div>
-
 <body>
     <h1>RPN Mods Key Generator</h1>
-    <p>To get your free key, you must complete the Linkvertise page. Once finished, you will be redirected to your unique key page valid for 24 hours.</p>
+    <p>To get your free key, go through our Linkvertise page. Once completed, your unique key will be generated for 24 hours.</p>
+    <a href="#" class="button" id="startBtn">Get Key</a>
 
-    <a class="button" id="getKeyBtn" href="key.html?token=RPNGEN123">Get Key</a>
+    <script>
+        document.getElementById("startBtn").addEventListener("click", async (e) => {
+            e.preventDefault();
 
-<script>
-document.getElementById("getKeyBtn").addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent the link from navigating immediately
+            // Open Linkvertise in new tab
+            window.open("https://direct-link.net/566237/1v1vlol-steam-cheat", "_blank");
 
-    // Open Linkvertise in a new tab
-    window.open("https://direct-link.net/566237/1v1vlol-steam-cheat", "_blank");
+            // Wait a few seconds for user to finish
+            setTimeout(async () => {
+                try {
+                    // Call your Worker to generate the key
+                    const res = await fetch("https://keygen-worker.cerise-pagel.workers.dev/gen?token=RPNGEN123");
+                    const data = await res.json();
 
-    // Redirect to key.html with token after delay
-    setTimeout(() => {
-        window.location.href = "key.html?token=RPNGEN123";
-    }, 7000); // 7-second delay; adjust as needed
-});
-</script>
-
+                    if (data.key) {
+                        // Redirect to key.html with the actual key
+                        window.location.href = `key.html?key=${data.key}`;
+                    } else {
+                        alert("Error generating key: " + (data.message || "Unknown error"));
+                    }
+                } catch (err) {
+                    console.error(err);
+                    alert("Failed to generate key!");
+                }
+            }, 7000); // adjust delay if needed
+        });
+    </script>
 </body>
 
 </html>
