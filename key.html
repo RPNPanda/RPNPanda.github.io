@@ -45,34 +45,31 @@
     <div id="errorMessage"></div>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const key = params.get('key');
+const params = new URLSearchParams(window.location.search);
+const key = params.get('key');
 
-        const keyDisplay = document.getElementById('keyDisplay');
-        const errorMessage = document.getElementById('errorMessage');
+if (!key) {
+    document.getElementById('keyDisplay').textContent = '';
+    document.getElementById('errorMessage').textContent = "Do it right... Don't bypass the page!";
+} else {
+    fetch(`https://keygen-worker.cerise-pagel.workers.dev/check?key=${key}`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.valid) {
+                document.getElementById('keyDisplay').textContent = "Your Key: " + key;
+            } else {
+                document.getElementById('keyDisplay').textContent = '';
+                document.getElementById('errorMessage').textContent = "Invalid or expired key!";
+            }
+        })
+        .catch(err => {
+            document.getElementById('keyDisplay').textContent = '';
+            document.getElementById('errorMessage').textContent = "Error fetching key!";
+            console.error(err);
+        });
+}
+</script>
 
-        if (!key) {
-            keyDisplay.textContent = '';
-            errorMessage.textContent = "Do it right... Don't bypass the page!";
-        } else {
-            fetch(`https://keygen-worker.cerise-pagel.workers.dev/check?key=${key}`)
-                .then(res => res.json())
-                .then(data => {
-                    if (data.valid) {
-                        keyDisplay.textContent = "Your Key: " + key;
-                        errorMessage.textContent = '';
-                    } else {
-                        keyDisplay.textContent = '';
-                        errorMessage.textContent = "Invalid or expired key!";
-                    }
-                })
-                .catch(err => {
-                    keyDisplay.textContent = '';
-                    errorMessage.textContent = "Error fetching key!";
-                    console.error("Fetch error:", err);
-                });
-        }
-    </script>
 </body>
 
 </html>
