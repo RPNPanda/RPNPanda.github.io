@@ -16,10 +16,11 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            text-align: center;
         }
 
         h1 {
-            color: #fffff;
+            color: #ffffff;
         }
 
         a.button {
@@ -31,6 +32,7 @@
             text-decoration: none;
             border-radius: 6px;
             transition: background-color 0.2s;
+            font-size: 18px;
         }
 
         a.button:hover {
@@ -39,7 +41,6 @@
 
         p {
             max-width: 600px;
-            text-align: center;
         }
     </style>
 </head>
@@ -59,10 +60,21 @@
         </div>
     </div>
 
-    <body>
-        <h1>RPN Mods Key Generator</h1>
-        <p>To get your free key, you must go through our Linkvertise page. Once completed, you will receive your unique key to use in the loader for 24 hours.</p>
-        <a class="button" href="https://linkvertise.com/your-link-here" target="_blank">Get Key</a>
-    </body>
+    <h1>RPN Mods Key Generator</h1>
+    <p>To get your free key, you must go through our Linkvertise page. Once completed, you will receive your unique key to use in the loader for 24 hours.</p>
+    <a class="button" href="https://linkvertise.com/your-link-here" target="_blank" id="getKeyBtn">Get Key</a>
+
+    <script>
+        document.getElementById("getKeyBtn").addEventListener("click", () => {
+            // Open Linkvertise in a new tab
+            window.open("https://linkvertise.com/your-link-here", "_blank");
+
+            // After a short delay, redirect to key page with verification token
+            setTimeout(() => {
+                window.location.href = "key.html?token=RPNGEN123";
+            }, 5000); // 5 second delay; adjust if needed
+        });
+    </script>
+</body>
 
 </html>
