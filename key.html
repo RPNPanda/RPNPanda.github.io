@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RPN Mods Key Page</title>
+    <link rel="stylesheet" type="text/css" href="https://rpnmods.org/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #f44336;
+            margin-bottom: 10px;
+        }
+
+        #keyDisplay {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #1e88e5;
+            word-break: break-all;
+        }
+
+        #errorMessage {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ff5252;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #1e88e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+            font-size: 18px;
+        }
+
+        a.button:hover {
+            background-color: #1565c0;
+        }
+
+        p {
+            max-width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tabs">
+        <div class="tab-left">
+            <span class="logo"><i class="fas fa-shield-alt"></i> <strong>RPN Mods</strong></span>
+        </div>
+
+        <div class="tab-right">
+            <a href="https://rpnmods.org/Products" class="tab-button dark"><i class="fas fa-globe"></i> Products</a>
+            <a href="https://rpnmods.org/how-to-use" class="tab-button dark">How To Use</a>
+            <a href="https://rpnmods.org/cw/weaponID" class="tab-button dark"><i class="fas fa-list"></i> Cold War Weapon List</a>
+            <a href="https://rpnmods.org/ip" class="tab-button dark"><i class="fas fa-key"></i> Show IP for Lost Key’s</a>
+            <a href="https://rpnmods.org/loader" class="tab-button primary"><i class="fas fa-download"></i> Download Loader</a>
+        </div>
+    </div>
+
+    <h1>RPN Mods Key Generator</h1>
+
+    <div id="keyDisplay">Fetching key...</div>
+    <div id="errorMessage"></div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('token');
+
+        if (!token) {
+            document.getElementById('keyDisplay').textContent = '';
+            document.getElementById('errorMessage').textContent = "Do it right.... Dont bypass the page!";
+        } else {
+            fetch(`https://keygen-worker.cerise-pagel.workers.dev/gen?token=${token}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.key) {
+                        document.getElementById('keyDisplay').textContent = "Your Key: " + data.key;
+                    } else if (data.error) {
+                        document.getElementById('keyDisplay').textContent = '';
+                        document.getElementById('errorMessage').textContent = data.error;
+                    } else {
+                        document.getElementById('keyDisplay').textContent = '';
+                        document.getElementById('errorMessage').textContent = "Invalid or expired token!";
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('keyDisplay').textContent = '';
+                    document.getElementById('errorMessage').textContent = "Error fetching key!";
+                    console.error(err);
+                });
+        }
+    </script>
+</body>
+
+</html>
