@@ -83,27 +83,34 @@
         const params = new URLSearchParams(window.location.search);
         const token = params.get('token');
 
+        const keyDisplay = document.getElementById('keyDisplay');
+        const errorMessage = document.getElementById('errorMessage');
+
         if (!token) {
-            document.getElementById('keyDisplay').textContent = '';
-            document.getElementById('errorMessage').textContent = "Do it right.... Dont bypass the page!";
+            keyDisplay.textContent = '';
+            errorMessage.textContent = "Do it right... Don't bypass the page!";
         } else {
             fetch(`https://keygen-worker.cerise-pagel.workers.dev/gen?token=${token}`)
-                .then(res => res.json())
+                .then(res => {
+                    if (!res.ok) throw new Error("Network response not OK");
+                    return res.json();
+                })
                 .then(data => {
                     if (data.key) {
-                        document.getElementById('keyDisplay').textContent = "Your Key: " + data.key;
-                    } else if (data.error) {
-                        document.getElementById('keyDisplay').textContent = '';
-                        document.getElementById('errorMessage').textContent = data.error;
+                        keyDisplay.textContent = "Your Key: " + data.key;
+                        errorMessage.textContent = '';
+                    } else if (data.message) {
+                        keyDisplay.textContent = '';
+                        errorMessage.textContent = data.message;
                     } else {
-                        document.getElementById('keyDisplay').textContent = '';
-                        document.getElementById('errorMessage').textContent = "Invalid or expired token!";
+                        keyDisplay.textContent = '';
+                        errorMessage.textContent = "Invalid or expired token!";
                     }
                 })
                 .catch(err => {
-                    document.getElementById('keyDisplay').textContent = '';
-                    document.getElementById('errorMessage').textContent = "Error fetching key!";
-                    console.error(err);
+                    keyDisplay.textContent = '';
+                    errorMessage.textContent = "Error fetching key!";
+                    console.error("Fetch error:", err);
                 });
         }
     </script>
