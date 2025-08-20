@@ -66,17 +66,22 @@
 
     <a class="button" id="getKeyBtn" href="key?token=RPNGEN123">Get Key</a>
 
-    <script>
-        document.getElementById("getKeyBtn").addEventListener("click", () => {
-            // Open Linkvertise in a new tab
-            window.open("https://direct-link.net/566237/1v1vlol-steam-cheat", "_blank");
+    <a class="button" id="getKeyBtn" href="#">Start Linkvertise & Get Key</a>
 
-            // Redirect to key.html with token after delay
-            setTimeout(() => {
-                window.location.href = "key.html?token=RPNGEN123";
-            }, 7000); // 7-second delay; adjust as needed
-        });
-    </script>
+<script>
+document.getElementById("getKeyBtn").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent the link from navigating immediately
+
+    // Open Linkvertise in a new tab
+    window.open("https://direct-link.net/566237/1v1vlol-steam-cheat", "_blank");
+
+    // Redirect to key.html with token after delay
+    setTimeout(() => {
+        window.location.href = "key.html?token=RPNGEN123";
+    }, 7000); // 7-second delay; adjust as needed
+});
+</script>
+
 </body>
 
 </html>
