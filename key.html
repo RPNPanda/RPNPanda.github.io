@@ -77,8 +77,8 @@
                 document.getElementById("keyOut").textContent = data.key || "—";
                 document.getElementById("msgOut").textContent = data.message || "";
             } catch (err) {
-                document.getElementById("keyOut").textContent = data.error || "";
-                document.getElementById("msgOut").textContent = err.message;
+                document.getElementById("keyOut").textContent = "Need to do step 1 and 2 First before getting key";
+                document.getElementById("msgOut").textContent = "rpnmods.org/getkey";
             }
         }
 
