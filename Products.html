@@ -115,6 +115,44 @@
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
             /* Subtle red glow */
         }
+
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            /* center horizontally */
+            align-items: center;
+            /* center vertically if container has height */
+            min-height: 100vh;
+            /* optional: makes it vertically centered on screen */
+        }
+
+        .product-card {
+            width: calc(560px + 40px);
+            /* iframe width + 40px */
+            height: calc(315px + 40px);
+            /* iframe height + 40px */
+            background: #1c1c1c;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-card iframe {
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            margin: 10px 0 5px 0;
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -138,8 +176,17 @@
     <h1 class="store-title">Dear RPN Mods Customers</h1>
 
     <div class="notice">
-            ⚠️ <strong>Important Notice:</strong> RPN Mods has shut down all services as of October 11, 2025, with no plans to return. If you were a paying customer and need support please join - https://discord.gg/uDcmyBuTWC 
+        ⚠️ <strong>Important Notice:</strong> RPN Mods has shut down all services as of October 11, 2025, with no plans to return. If you were a paying customer and need support please join - https://discord.gg/uDcmyBuTWC
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aQ3CswHuLUY?si=m2-jbhD8bOey8IXO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2 class="product-title">The End...</h2>
         </div>
+
+    </div>
 
 </body>
 
