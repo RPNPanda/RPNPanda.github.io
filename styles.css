@@ -33,7 +33,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  background: url('https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/refs/heads/main/Background.png') no-repeat center center fixed;
+  background: url('https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/main/Background.png') no-repeat center center fixed;
+  background-size: cover;
   color: var(--foreground);
   line-height: 1.6;
   min-height: 100vh;
