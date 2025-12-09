@@ -89,7 +89,17 @@
               <span class="badge badge-primary">Black Ops 6 / Black Ops 7 / Warzone</span>
               <span class="badge badge-outline">DMA</span>
             </div>
-            <h2 class="card-title">Version 2.0.2</h2>
+            <div id="version"></div>
+
+            <script>
+            fetch("Version.txt")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("version").textContent = data;
+                })
+                .catch(err => console.error("Error loading Version.txt:", err));
+            </script>
+
             <p class="card-description">Latest Update - December 8 2025</p>
           </div>
 
