@@ -8,22 +8,22 @@ const legacy = [
   {
     title: "Cold War — Steam Loader",
     desc: "Legacy Steam build for Call of Duty: Black Ops Cold War.",
-    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/main/Steam-Loader.zip",
+    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/gh-pages/downloads/Steam-Loader.zip",
   },
   {
     title: "Cold War — Battle.net Loader",
     desc: "Legacy Battle.net build for Call of Duty: Black Ops Cold War.",
-    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/main/BattleNet-Loader.zip",
+    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/gh-pages/downloads/BattleNet-Loader.zip",
   },
   {
     title: "Cold War — Offsets",
     desc: "Standalone offsets archive for legacy Cold War tooling.",
-    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/main/RPNMods%20CW%20Offsets.zip",
+    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/gh-pages/downloads/RPNMods%20CW%20Offsets.zip",
   },
   {
     title: "1v1.lol Cheat",
     desc: "Original RPN Mods 1v1.lol modification.",
-    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/main/1v1.lolcheat.zip",
+    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/gh-pages/downloads/1v1.lol.zip",
   },
 ];
 
