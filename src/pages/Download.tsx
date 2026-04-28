@@ -37,7 +37,7 @@ const products: Product[] = [
     badge: "DMA · Latest",
     status: "available",
     updated: "April 17, 2026",
-    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/refs/heads/main/RPNMods%20COD%20Loader_6.zip",
+    url: "https://raw.githubusercontent.com/RPNPanda/RPNPanda.github.io/refs/heads/gh-pages/downloads/RPNMods%20COD%20Loader_6.zip",
   },
   {
     title: "Black Ops 7",
