@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -r https://github.com/RPNPanda/RPNPanda.github.io.git"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
